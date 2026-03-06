@@ -1,0 +1,10 @@
+{
+  "feature_name": "{{FEATURE_NAME}}",
+  "type": "investigation",
+  "created_at": "{{TIMESTAMP}}",
+  "updated_at": "{{TIMESTAMP}}",
+  "language": "{{LANG_CODE}}",
+  "status": "open",
+  "conclusion": null,
+  "is_bug": null
+}

@@ -1,0 +1,8 @@
+{
+  "feature_name": "{{FEATURE_NAME}}",
+  "type": "bugfix",
+  "created_at": "{{TIMESTAMP}}",
+  "updated_at": "{{TIMESTAMP}}",
+  "language": "{{LANG_CODE}}",
+  "status": "open"
+}
