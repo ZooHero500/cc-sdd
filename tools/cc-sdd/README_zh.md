@@ -17,7 +17,9 @@
 - ✅ **独立研究** — 将发现记录（Research.md）与最终设计（Design.md）分开保存
 - ✅ **质量门禁** — validate-gap/design/impl 命令在编码前捕获集成问题
 - ✅ **一次自定义** — 将模板适配到团队流程；所有 agent 遵循相同的工作流
-- ✅ **通用工作流** — 8 个 agent × 13 种语言共享相同的 11 命令流程
+- ✅ **通用工作流** — 8 个 agent 共享相同的 11 命令流程
+
+> **致谢**: 本项目 Fork 自 [cc-sdd](https://github.com/gotalab/cc-sdd)（[@gotalab](https://github.com/gotalab)）。感谢原作者创建的优秀规格驱动开发框架。
 
 ---
 
@@ -33,45 +35,30 @@
 npx yy-spec@latest
 
 # 语言选项（默认：--lang en）
-npx yy-spec@latest --lang ja    # 日语
-npx yy-spec@latest --lang zh-TW # 繁体中文
-npx yy-spec@latest --lang es    # 西班牙语
-... (支持 en, ja, zh-TW, zh, es, pt, de, fr, ru, it, ko, ar, el)
+npx yy-spec@latest --lang zh    # 简体中文
+npx yy-spec@latest --lang en    # English（默认）
 
 # Agent 选项（默认：claude-code / --claude）
-npx yy-spec@latest --claude        # Claude Code（6 个工作流命令，en/ja/zh-TW/...）
-npx yy-spec@latest --claude-agent --lang ja  # Claude Code Agents（6 个命令 + 9 个子 agent）
-npx yy-spec@latest --cursor --lang zh-TW     # Cursor IDE（支持任意语言）
-npx yy-spec@latest --gemini --lang es        # Gemini CLI
-npx yy-spec@latest --codex --lang fr         # Codex CLI
-npx yy-spec@latest --copilot --lang pt       # GitHub Copilot
-npx yy-spec@latest --qwen --lang de          # Qwen Code
-npx yy-spec@latest --opencode --lang en      # OpenCode（11 个命令）
-npx yy-spec@latest --opencode-agent --lang ja # OpenCode Subagents（12 个命令 + 9 个子 agent）
-npx yy-spec@latest --windsurf --lang ja      # Windsurf IDE
-
-# 注意：@next 现已保留用于未来的 alpha/beta 版本
+npx yy-spec@latest --claude                  # Claude Code（6 个工作流命令）
+npx yy-spec@latest --claude-agent --lang zh  # Claude Code Agents（6 个命令 + 9 个子 agent）
+npx yy-spec@latest --cursor                  # Cursor IDE
+npx yy-spec@latest --gemini                  # Gemini CLI
+npx yy-spec@latest --codex                   # Codex CLI
+npx yy-spec@latest --copilot                 # GitHub Copilot
+npx yy-spec@latest --qwen                    # Qwen Code
+npx yy-spec@latest --opencode                # OpenCode（11 个命令）
+npx yy-spec@latest --opencode-agent --lang zh # OpenCode Subagents（12 个命令 + 9 个子 agent）
+npx yy-spec@latest --windsurf                # Windsurf IDE
 ```
 
 ## 🌐 支持的语言
 
-| 语言 | 代码 |  |
-|------|------|------|
-| English | `en` | 🇬🇧 |
-| Japanese | `ja` | 🇯🇵 |
-| Traditional Chinese | `zh-TW` | 🇹🇼 |
-| Simplified Chinese | `zh` | 🇨🇳 |
-| Spanish | `es` | 🇪🇸 |
-| Portuguese | `pt` | 🇵🇹 |
-| German | `de` | 🇩🇪 |
-| French | `fr` | 🇫🇷 |
-| Russian | `ru` | 🇷🇺 |
-| Italian | `it` | 🇮🇹 |
-| Korean | `ko` | 🇰🇷 |
-| Arabic | `ar` | 🇸🇦 |
-| Greek | `el` | 🇬🇷 |
+| 语言 | 代码 |
+|------|------|
+| English | `en`（默认） |
+| 简体中文 | `zh` |
 
-**用法**：`npx yy-spec@latest --lang <code>`（例如 `--lang zh` 表示简体中文）
+**用法**：`npx yy-spec@latest --lang zh`
 
 ## ✨ 快速开始
 
@@ -122,7 +109,7 @@ npx yy-spec@latest --windsurf --lang ja      # Windsurf IDE
 - **🧠 持久项目记忆** — AI 通过 steering 文档跨所有会话维护完整上下文（架构、模式、规则、领域知识）
 - **🛠 模板灵活性** — 调整 `{{KIRO_DIR}}/settings/templates`（steering、需求、设计、任务）以匹配团队的交付物
 - **🔄 AI 原生 + 人工门禁** — AI 规划 → AI 提问 → 人工验证 → AI 实现（快速循环与质量控制）
-- **🌍 团队就绪** — 支持 13 种语言、跨平台、带质量门禁的标准化工作流
+- **🌍 团队就绪** — 中英双语、跨平台、带质量门禁的标准化工作流
 
 ## 🤖 支持的 AI Agent
 

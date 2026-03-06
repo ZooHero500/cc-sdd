@@ -4,11 +4,11 @@ import type { AgentType, CCSddConfig } from '../src/resolvers/agentLayout';
 
 describe('buildTemplateContext', () => {
   it('includes LANG_CODE and KIRO_DIR (default)', () => {
-    const ctx = buildTemplateContext({ agent: 'claude-code', lang: 'ja' });
-    expect(ctx.LANG_CODE).toBe('ja');
+    const ctx = buildTemplateContext({ agent: 'claude-code', lang: 'zh' });
+    expect(ctx.LANG_CODE).toBe('zh');
     expect(ctx.KIRO_DIR).toBe('.yy-dev');
     expect(ctx.DEV_GUIDELINES).toBe(
-      '- Think in English, generate responses in Japanese. All Markdown content written to project files (e.g., requirements.md, design.md, tasks.md, research.md, validation reports) MUST be written in the target language configured for this specification (see spec.json.language).',
+      '- Think in English, generate responses in Simplified Chinese. All Markdown content written to project files (e.g., requirements.md, design.md, tasks.md, research.md, validation reports) MUST be written in the target language configured for this specification (see spec.json.language).',
     );
   });
 
@@ -45,7 +45,7 @@ describe('buildTemplateContext', () => {
   });
 
   it('provides guidelines for all supported languages', () => {
-    const langs = ['en', 'ja', 'zh-TW', 'zh', 'es', 'pt', 'de', 'fr', 'ru', 'it', 'ko', 'ar', 'el'] as const;
+    const langs = ['en', 'zh'] as const;
     for (const lang of langs) {
       const ctx = buildTemplateContext({ agent: 'claude-code', lang });
       expect(ctx.DEV_GUIDELINES.length).toBeGreaterThan(0);

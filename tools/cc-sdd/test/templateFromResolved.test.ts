@@ -22,7 +22,7 @@ describe('contextFromResolved', () => {
   });
 
   it('creates template context with custom configuration', () => {
-    const args = parseArgs(['--lang', 'ja', '--kiro-dir', 'docs/kiro', '--agent', 'gemini-cli']);
+    const args = parseArgs(['--lang', 'zh', '--kiro-dir', 'docs/kiro', '--agent', 'gemini-cli']);
     const config = {
       agentLayouts: {
         'gemini-cli': { commandsDir: '.custom/commands' }
@@ -31,28 +31,28 @@ describe('contextFromResolved', () => {
     const resolved = mergeConfigAndArgs(args, config, runtimeDarwin);
     const ctx = contextFromResolved(resolved);
 
-    expect(ctx.LANG_CODE).toBe('ja');
+    expect(ctx.LANG_CODE).toBe('zh');
     expect(ctx.KIRO_DIR).toBe('docs/kiro');
     expect(ctx.AGENT_DIR).toBe('.gemini');
     expect(ctx.AGENT_DOC).toBe('GEMINI.md');
     expect(ctx.AGENT_COMMANDS_DIR).toBe('.custom/commands');
     expect(ctx.DEV_GUIDELINES).toBe(
-      '- Think in English, generate responses in Japanese. All Markdown content written to project files (e.g., requirements.md, design.md, tasks.md, research.md, validation reports) MUST be written in the target language configured for this specification (see spec.json.language).',
+      '- Think in English, generate responses in Simplified Chinese. All Markdown content written to project files (e.g., requirements.md, design.md, tasks.md, research.md, validation reports) MUST be written in the target language configured for this specification (see spec.json.language).',
     );
   });
 
   it('creates template context for qwen-code agent', () => {
-    const args = parseArgs(['--agent', 'qwen-code', '--lang', 'zh-TW']);
+    const args = parseArgs(['--agent', 'qwen-code', '--lang', 'zh']);
     const resolved = mergeConfigAndArgs(args, {}, runtimeDarwin);
     const ctx = contextFromResolved(resolved);
 
-    expect(ctx.LANG_CODE).toBe('zh-TW');
+    expect(ctx.LANG_CODE).toBe('zh');
     expect(ctx.KIRO_DIR).toBe('.yy-dev');
     expect(ctx.AGENT_DIR).toBe('.qwen');
     expect(ctx.AGENT_DOC).toBe('QWEN.md');
     expect(ctx.AGENT_COMMANDS_DIR).toBe('.qwen/commands/yy');
     expect(ctx.DEV_GUIDELINES).toBe(
-      '- Think in English, generate responses in Traditional Chinese. All Markdown content written to project files (e.g., requirements.md, design.md, tasks.md, research.md, validation reports) MUST be written in the target language configured for this specification (see spec.json.language).',
+      '- Think in English, generate responses in Simplified Chinese. All Markdown content written to project files (e.g., requirements.md, design.md, tasks.md, research.md, validation reports) MUST be written in the target language configured for this specification (see spec.json.language).',
     );
   });
 
@@ -60,7 +60,7 @@ describe('contextFromResolved', () => {
     const args = parseArgs(['--kiro-dir', 'custom-kiro']);
     const config = {
       agentLayouts: {
-        'claude-code': { 
+        'claude-code': {
           commandsDir: '.custom/commands/path',
           agentDir: '.custom-agent',
           docFile: 'CUSTOM-DOC.md'

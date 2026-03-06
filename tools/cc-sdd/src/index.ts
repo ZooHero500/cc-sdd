@@ -28,7 +28,7 @@ const helpText = `Usage: yy-spec [options]
 
 Options:
   --agent <${agentKeys.join('|')}>  Select agent
-${agentAliasLine}  --lang <ja|en|zh-TW|zh|es|pt|de|fr|ru|it|ko|ar|el>  Language
+${agentAliasLine}  --lang <en|zh>                                Language
   --os <auto|mac|windows|linux>               Target OS (auto uses runtime)
   --kiro-dir <path>                           Specs root dir (default .yy-dev)
   --overwrite <prompt|skip|force>             Overwrite policy (default: prompt)

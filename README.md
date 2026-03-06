@@ -35,7 +35,9 @@ npx yy-spec@latest --claude --lang zh    ## Claude Code（简体中文）
 /yy:feature 用户认证系统，支持 OAuth     # 开始开发功能
 ```
 
-**安装只需 30 秒。** 支持 8 种 Agent（Claude Commands / Subagents、Cursor、Gemini、Codex、Copilot、Qwen、OpenCode、Windsurf）× 13 种语言。
+**安装只需 30 秒。** 支持 8 种 Agent（Claude Commands / Subagents、Cursor、Gemini、Codex、Copilot、Qwen、OpenCode、Windsurf），中英双语。
+
+> **致谢**: 本项目 Fork 自 [cc-sdd](https://github.com/gotalab/cc-sdd)（[@gotalab](https://github.com/gotalab)）。感谢原作者创建的优秀规格驱动开发框架。
 
 📖 **下一步：** [安装选项](#%EF%B8%8F-安装选项) | [命令参考](docs/guides/zh/command-reference.md) | [规格驱动指南](docs/guides/zh/spec-driven.md)
 
@@ -388,9 +390,7 @@ npx yy-spec@latest --windsurf       # Windsurf IDE
 
 ```bash
 npx yy-spec@latest --lang zh        # 简体中文
-npx yy-spec@latest --lang en        # English
-npx yy-spec@latest --lang es        # Spanish
-# 支持：en, ja, zh-TW, zh, es, pt, de, fr, ru, it, ko, ar, el
+npx yy-spec@latest --lang en        # English（默认）
 ```
 
 ### 其他选项

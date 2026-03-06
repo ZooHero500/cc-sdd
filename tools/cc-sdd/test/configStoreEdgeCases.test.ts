@@ -39,7 +39,7 @@ describe('config store edge cases', () => {
     const dir = await mkTmp();
     const config: UserConfig = {
       agent: 'claude-code',
-      lang: 'ja',
+      lang: 'zh',
       agentLayouts: {
         'claude-code': {
           commandsDir: '.custom'
@@ -66,7 +66,7 @@ describe('config store edge cases', () => {
     const dir = await mkTmp();
     const complexConfig: UserConfig = {
       agent: 'gemini-cli',
-      lang: 'zh-TW',
+      lang: 'zh',
       os: 'linux',
       kiroDir: 'docs/kiro',
       overwrite: 'force',

@@ -17,7 +17,9 @@ English | <a href="./README_zh.md">简体中文</a>
 - ✅ **Separate Research** — Keep discovery notes (Research.md) separate from final design (Design.md)
 - ✅ **Quality Gates** — validate-gap/design/impl commands catch integration issues before coding
 - ✅ **Customize Once** — Adapt templates to your team's process; all agents follow the same workflow
-- ✅ **Universal Workflow** — 8 agents × 13 languages share the same 11-command process
+- ✅ **Universal Workflow** — 8 agents share the same 11-command process
+
+> **Acknowledgement**: This project is a fork of [cc-sdd](https://github.com/gotalab/cc-sdd) by [@gotalab](https://github.com/gotalab). Thanks to the original author for the excellent Spec-Driven Development framework.
 
 ---
 
@@ -26,7 +28,7 @@ English | <a href="./README_zh.md">简体中文</a>
 
 ## 🚀 Installation
 
-Run one command to install **AI-DLC** (AI Driven Development Lifecycle) with **SDD** (Spec-Driven Development) workflows across your preferred AI coding agent. cc-sdd also scaffolds team-aligned templates so generated requirements, design reviews, task plans, and steering docs fit your approval flow.
+Run one command to install **AI-DLC** (AI Driven Development Lifecycle) with **SDD** (Spec-Driven Development) workflows across your preferred AI coding agent. yy-spec also scaffolds team-aligned templates so generated requirements, design reviews, task plans, and steering docs fit your approval flow.
 
 ```bash
 # Basic installation (defaults: English docs, Claude Code)
@@ -34,43 +36,29 @@ npx yy-spec@latest
 
 # With language options (default: --lang en)
 npx yy-spec@latest --lang zh    # Simplified Chinese
-npx yy-spec@latest --lang es    # Spanish
-... (en, ja, zh-TW, zh, es, pt, de, fr, ru, it, ko, ar, el supported)
+npx yy-spec@latest --lang en    # English (default)
 
 # With agent options (default: claude-code / --claude)
-npx yy-spec@latest --claude        # Claude Code (6 workflow commands, en/zh/...)
+npx yy-spec@latest --claude                  # Claude Code (6 workflow commands)
 npx yy-spec@latest --claude-agent --lang zh  # Claude Code Agents (6 commands + 9 subagents)
-npx yy-spec@latest --cursor --lang es        # Cursor IDE (choose any supported lang)
-npx yy-spec@latest --gemini --lang es        # Gemini CLI
-npx yy-spec@latest --codex --lang fr         # Codex CLI
-npx yy-spec@latest --copilot --lang pt       # GitHub Copilot
-npx yy-spec@latest --qwen --lang de          # Qwen Code
-npx yy-spec@latest --opencode --lang en      # OpenCode (11 commands)
+npx yy-spec@latest --cursor                  # Cursor IDE
+npx yy-spec@latest --gemini                  # Gemini CLI
+npx yy-spec@latest --codex                   # Codex CLI
+npx yy-spec@latest --copilot                 # GitHub Copilot
+npx yy-spec@latest --qwen                    # Qwen Code
+npx yy-spec@latest --opencode                # OpenCode (11 commands)
 npx yy-spec@latest --opencode-agent --lang zh # OpenCode Subagents (12 commands + 9 subagents)
-npx yy-spec@latest --windsurf --lang zh      # Windsurf IDE
-
-# Note: @next is now reserved for future alpha/beta versions
+npx yy-spec@latest --windsurf                # Windsurf IDE
 ```
 
 ## 🌐 Supported Languages
 
-| Language | Code |  |
-|----------|------|------|
-| English | `en` | 🇬🇧 |
-| Japanese | `ja` | 🇯🇵 |
-| Traditional Chinese | `zh-TW` | 🇹🇼 |
-| Simplified Chinese | `zh` | 🇨🇳 |
-| Spanish | `es` | 🇪🇸 |
-| Portuguese | `pt` | 🇵🇹 |
-| German | `de` | 🇩🇪 |
-| French | `fr` | 🇫🇷 |
-| Russian | `ru` | 🇷🇺 |
-| Italian | `it` | 🇮🇹 |
-| Korean | `ko` | 🇰🇷 |
-| Arabic | `ar` | 🇸🇦 |
-| Greek | `el` | 🇬🇷 |
+| Language | Code |
+|----------|------|
+| English | `en` (default) |
+| Simplified Chinese | `zh` |
 
-**Usage**: `npx yy-spec@latest --lang <code>` (e.g., `--lang ja` for Japanese)
+**Usage**: `npx yy-spec@latest --lang zh`
 
 ## ✨ Quick Start
 
@@ -129,7 +117,7 @@ npx yy-spec@latest --windsurf --lang zh      # Windsurf IDE
 - **🧠 Persistent Project Memory** - AI maintains comprehensive context (architecture, patterns, rules, domain knowledge) across all sessions via steering documents  
 - **🛠 Template flexibility** - Tweak `{{KIRO_DIR}}/settings/templates` (steering, requirements, design, tasks) to mirror your team's deliverables
 - **🔄 AI-Native + Human Gates** - AI Plans → AI Asks → Human Validates → AI Implements (rapid cycles with quality control)
-- **🌍 Team-Ready** - 13-language support, cross-platform, standardized workflows with quality gates
+- **🌍 Team-Ready** - English/Chinese support, cross-platform, standardized workflows with quality gates
 
 ## 🤖 Supported AI Agents
 
@@ -212,11 +200,11 @@ Edit templates in `{{KIRO_DIR}}/settings/templates/` to match your workflow. Kee
 ## ⚙️ Configuration
 
 ```bash
-# Language and platform
-npx yy-spec@latest --lang zh            # macOS / Linux / Windows (auto-detected)
-npx yy-spec@latest --lang zh --os mac   # Optional explicit override (legacy flag)
+# Language
+npx yy-spec@latest --lang zh            # Simplified Chinese
+npx yy-spec@latest --lang en            # English (default)
 
-# Safe operations  
+# Safe operations
 npx yy-spec@latest --dry-run --backup
 
 # Custom directory

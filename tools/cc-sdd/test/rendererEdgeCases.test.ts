@@ -122,7 +122,7 @@ describe('template renderer edge cases', () => {
     it('preserves exact JSON formatting for complex structures', () => {
       const complexCtx = buildTemplateContext({ 
         agent: 'gemini-cli', 
-        lang: 'ja',
+        lang: 'zh',
         kiroDir: { flag: 'custom-kiro' }
       });
       
@@ -144,7 +144,7 @@ describe('template renderer edge cases', () => {
       const result = renderJsonTemplate(input, 'gemini-cli', complexCtx) as any;
       expect(result.manifest.version).toBe(2);
       expect(result.manifest.agent).toBe('gemini-cli');
-      expect(result.manifest.config.lang).toBe('ja');
+      expect(result.manifest.config.lang).toBe('zh');
       expect(result.manifest.config.paths.kiro).toBe('custom-kiro');
       expect(result.manifest.config.paths.agent).toBe('.gemini');
       expect(result.manifest.config.paths.commands).toBe('.gemini/commands/yy');

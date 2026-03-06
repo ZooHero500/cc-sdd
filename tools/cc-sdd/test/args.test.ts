@@ -5,14 +5,14 @@ describe('parseArgs', () => {
   it('parses basic flags with explicit values', () => {
     const args = parseArgs([
       '--agent', 'claude-code',
-      '--lang', 'ja',
+      '--lang', 'zh',
       '--os', 'auto',
       '--overwrite', 'prompt',
       '--kiro-dir', '.yy-dev',
     ]);
     const expected: ParsedArgs = {
       agent: 'claude-code',
-      lang: 'ja',
+      lang: 'zh',
       os: 'auto',
       overwrite: 'prompt',
       kiroDir: '.yy-dev',
@@ -26,9 +26,9 @@ describe('parseArgs', () => {
     expect(args.yes).toBe(true);
   });
 
-  it('parses additional languages', () => {
-    expect(parseArgs(['--lang', 'es']).lang).toBe('es');
-    expect(parseArgs(['--lang', 'ko']).lang).toBe('ko');
+  it('parses supported languages', () => {
+    expect(parseArgs(['--lang', 'en']).lang).toBe('en');
+    expect(parseArgs(['--lang', 'zh']).lang).toBe('zh');
   });
 
   it('parses backup with and without value', () => {

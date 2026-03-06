@@ -28,7 +28,7 @@ describe('mergeConfigAndArgs', () => {
   it('respects precedence: CLI > config > defaults', () => {
     const args = parseArgs([
       '--agent', 'qwen-code',
-      '--lang', 'zh-TW',
+      '--lang', 'zh',
       '--os', 'mac',
       '--kiro-dir', '.work/kiro',
       '--overwrite', 'force',
@@ -48,7 +48,7 @@ describe('mergeConfigAndArgs', () => {
 
     const out = mergeConfigAndArgs(args, cfg, runtimeDarwin);
     expect(out.agent).toBe('qwen-code');
-    expect(out.lang).toBe('zh-TW');
+    expect(out.lang).toBe('zh');
     expect(out.os).toBe('mac');
     expect(out.resolvedOs).toBe('mac');
     expect(out.kiroDir).toBe('.work/kiro');
