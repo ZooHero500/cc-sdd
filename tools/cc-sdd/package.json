@@ -26,8 +26,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gotalab/cc-sdd.git",
-    "directory": "tools/cc-sdd"
+    "url": "https://github.com/PleasurehubTeam/yy-spec.git"
   },
   "type": "module",
   "bin": {
