@@ -6,7 +6,7 @@ This guide explains how the **Claude Code Agents** install target (`--claude-age
 
 ## Installation Recap
 
-- Install with `npx cc-sdd@latest --claude-agent --lang <code>`.
+- Install with `npx yy-spec@latest --claude-agent --lang <code>`.
 - Files are placed under:
   - `.claude/commands/yy/` – 6 workflow commands (feature, fix, investigate, plan-exec, status, steering).
   - `.claude/agents/kiro/` – 9 subagent definitions for analysis, expansion, and reporting.
@@ -45,7 +45,7 @@ The `.claude/agents/kiro/` directory contains 9 subagent definitions that provid
 
 ## Recommended Usage Pattern
 
-1. Run `npx cc-sdd@latest --claude-agent --lang <code>` to install.
+1. Run `npx yy-spec@latest --claude-agent --lang <code>` to install.
 2. Prepare project context via `/yy:steering`.
 3. Use `/yy:feature`, `/yy:fix`, or `/yy:investigate` for development tasks.
 4. For large features, `/yy:feature` generates a plan → execute with `/yy:plan-exec` in a new session.

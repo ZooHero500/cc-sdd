@@ -2,11 +2,11 @@
 
 > 📖 **简体中文指南（本页）** | [English](../customization-guide.md)
 
-本指南说明如何编辑 cc-sdd 的模板和规则，以适应团队特定的工作流。
+本指南说明如何编辑 yy-spec 的模板和规则，以适应团队特定的工作流。
 
 ## 简介
 
-cc-sdd 提供两个自定义点：
+yy-spec 提供两个自定义点：
 
 - **templates/** - 定义 AI 生成文档的**结构和格式**
 - **rules/** - 定义 AI 的**判断标准和生成原则**
@@ -57,7 +57,7 @@ cc-sdd 提供两个自定义点：
 
 ## 🚨 必须维护的结构
 
-cc-sdd 命令通过 AI Agent 读取和理解文档。以下元素**必须维护**：
+yy-spec 命令通过 AI Agent 读取和理解文档。以下元素**必须维护**：
 
 | 文件 | 必需元素 | 原因 |
 |------|---------|------|
@@ -1225,7 +1225,7 @@ diff \
 
 **解决方案**：恢复默认值并逐步重新自定义
 ```bash
-npx cc-sdd@latest --overwrite=force
+npx yy-spec@latest --overwrite=force
 ```
 
 ### 生成内容与预期不符

@@ -6,7 +6,7 @@
 
 ## 安装说明
 
-- 使用 `npx cc-sdd@latest --claude-agent --lang <code>` 安装。
+- 使用 `npx yy-spec@latest --claude-agent --lang <code>` 安装。
 - 文件放置于：
   - `.claude/commands/yy/` — 6 个工作流命令（feature、fix、investigate、plan-exec、status、steering）。
   - `.claude/agents/kiro/` — 9 个用于分析、扩展和报告的子 Agent 定义。
@@ -45,7 +45,7 @@
 
 ## 推荐使用模式
 
-1. 运行 `npx cc-sdd@latest --claude-agent --lang <code>` 进行安装。
+1. 运行 `npx yy-spec@latest --claude-agent --lang <code>` 进行安装。
 2. 通过 `/yy:steering` 准备项目上下文。
 3. 使用 `/yy:feature`、`/yy:fix` 或 `/yy:investigate` 处理开发任务。
 4. 对于大型功能，`/yy:feature` 生成计划后 → 在新会话中使用 `/yy:plan-exec` 执行。

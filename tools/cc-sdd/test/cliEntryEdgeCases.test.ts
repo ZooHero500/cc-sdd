@@ -30,22 +30,22 @@ describe('CLI entry edge cases', () => {
     const ctx = makeIO();
     const code = await runCli(['--help', '-h'], runtime, ctx.io, {});
     expect(code).toBe(0);
-    expect(ctx.logs.join('\n')).toMatch(/Usage: cc-sdd/);
+    expect(ctx.logs.join('\n')).toMatch(/Usage: yy-spec/);
   });
 
   it('handles multiple version flags', async () => {
     const ctx = makeIO();
     const code = await runCli(['--version', '-v'], runtime, ctx.io, {});
     expect(code).toBe(0);
-    expect(ctx.logs.join('\n')).toMatch(/cc-sdd v/);
+    expect(ctx.logs.join('\n')).toMatch(/yy-spec v/);
   });
 
   it('prioritizes help over version', async () => {
     const ctx = makeIO();
     const code = await runCli(['--version', '--help'], runtime, ctx.io, {});
     expect(code).toBe(0);
-    expect(ctx.logs.join('\n')).toMatch(/Usage: cc-sdd/);
-    expect(ctx.logs.join('\n')).not.toMatch(/cc-sdd v/);
+    expect(ctx.logs.join('\n')).toMatch(/Usage: yy-spec/);
+    expect(ctx.logs.join('\n')).not.toMatch(/yy-spec v/);
   });
 
   it('handles missing manifest file in dry-run mode', async () => {

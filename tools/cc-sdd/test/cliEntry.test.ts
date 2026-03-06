@@ -32,14 +32,14 @@ describe('CLI entry', () => {
     const ctx = makeIO();
     const code = await runCli(['--help'], runtime, ctx.io, {});
     expect(code).toBe(0);
-    expect(ctx.logs.join('\n')).toMatch(/Usage: cc-sdd/);
+    expect(ctx.logs.join('\n')).toMatch(/Usage: yy-spec/);
   });
 
   it('shows version', async () => {
     const ctx = makeIO();
     const code = await runCli(['--version'], runtime, ctx.io, {});
     expect(code).toBe(0);
-    expect(ctx.logs.join('\n')).toMatch(/cc-sdd v/);
+    expect(ctx.logs.join('\n')).toMatch(/yy-spec v/);
   });
 
   it('prints plan on --dry-run', async () => {

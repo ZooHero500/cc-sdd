@@ -2,7 +2,7 @@
 
 > 📖 **简体中文版:** [命令参考](zh/command-reference.md)
 
-Complete reference for all cc-sdd commands with detailed usage, examples, and troubleshooting.
+Complete reference for all yy-spec commands with detailed usage, examples, and troubleshooting.
 
 > **Note**: This reference is based on Claude Code command templates (13 commands: 6 auto-workflow + 7 step-by-step). Other agents (Cursor, Gemini CLI, Codex CLI, GitHub Copilot, Qwen Code, Windsurf) share the same step-by-step commands but use `spec-init` instead of the auto-workflow commands. Command separator varies by agent — see your agent's installed commands for exact syntax.
 
@@ -1573,7 +1573,7 @@ Or implement all remaining tasks:
 
 ### "Template missing"
 **Cause**: Corrupted or incomplete installation  
-**Solution**: Reinstall cc-sdd: `npx cc-sdd@latest`
+**Solution**: Reinstall yy-spec: `npx yy-spec@latest`
 
 ### Tasks not completing
 **Cause**: Checkbox format incorrect in tasks.md  
@@ -1597,7 +1597,7 @@ Or implement all remaining tasks:
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│ cc-sdd Command Quick Reference (Claude Code: 13 commands)   │
+│ yy-spec Command Quick Reference (Claude Code: 13 commands)   │
 ├─────────────────────────────────────────────────────────────┤
 │ AUTO WORKFLOW (end-to-end, self-closing)                     │
 │  /yy:steering              Create/update project memory     │

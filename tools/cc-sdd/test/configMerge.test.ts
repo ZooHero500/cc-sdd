@@ -18,7 +18,7 @@ describe('mergeConfigAndArgs', () => {
       overwrite: 'prompt',
       effectiveOverwrite: 'prompt',
       backupEnabled: false,
-      backupDir: '.cc-sdd.backup',
+      backupDir: '.yy-spec.backup',
       dryRun: false,
     };
     expect(out).toMatchObject(expected);

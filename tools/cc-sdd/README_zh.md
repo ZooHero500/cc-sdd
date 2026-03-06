@@ -1,7 +1,7 @@
-# cc-sdd：为团队工作流提供规格驱动开发
+# yy-spec：为团队工作流提供规格驱动开发
 
-[![npm version](https://img.shields.io/npm/v/cc-sdd?logo=npm)](https://www.npmjs.com/package/cc-sdd?activeTab=readme)
-[![install size](https://packagephobia.com/badge?p=cc-sdd)](https://packagephobia.com/result?p=cc-sdd)
+[![npm version](https://img.shields.io/npm/v/yy-spec?logo=npm)](https://www.npmjs.com/package/yy-spec?activeTab=readme)
+[![install size](https://packagephobia.com/badge?p=yy-spec)](https://packagephobia.com/result?p=yy-spec)
 [![license: MIT](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
 
 <div align="center" style="margin-bottom: 1rem; font-size: 1.1rem;"><sub>
@@ -21,34 +21,34 @@
 
 ---
 
-> 需要旧版流程？请使用 `npx cc-sdd@1.1.5`。从 v1.x 升级？
+> 需要旧版流程？请使用 `npx yy-spec@1.1.5`。从 v1.x 升级？
 > 请参阅迁移指南：[English](../../docs/guides/migration-guide.md) | [简体中文](../../docs/guides/zh/migration-guide.md)
 
 ## 🚀 安装
 
-运行一条命令，即可为你偏好的 AI 编程 agent 安装 **AI-DLC**（AI 驱动开发生命周期）与 **SDD**（规格驱动开发）工作流。cc-sdd 还会搭建与团队一致的模板，使生成的需求、设计评审、任务计划和 steering 文档符合你的审批流程。
+运行一条命令，即可为你偏好的 AI 编程 agent 安装 **AI-DLC**（AI 驱动开发生命周期）与 **SDD**（规格驱动开发）工作流。yy-spec 还会搭建与团队一致的模板，使生成的需求、设计评审、任务计划和 steering 文档符合你的审批流程。
 
 ```bash
 # 基础安装（默认：英文文档，Claude Code）
-npx cc-sdd@latest
+npx yy-spec@latest
 
 # 语言选项（默认：--lang en）
-npx cc-sdd@latest --lang ja    # 日语
-npx cc-sdd@latest --lang zh-TW # 繁体中文
-npx cc-sdd@latest --lang es    # 西班牙语
+npx yy-spec@latest --lang ja    # 日语
+npx yy-spec@latest --lang zh-TW # 繁体中文
+npx yy-spec@latest --lang es    # 西班牙语
 ... (支持 en, ja, zh-TW, zh, es, pt, de, fr, ru, it, ko, ar, el)
 
 # Agent 选项（默认：claude-code / --claude）
-npx cc-sdd@latest --claude        # Claude Code（6 个工作流命令，en/ja/zh-TW/...）
-npx cc-sdd@latest --claude-agent --lang ja  # Claude Code Agents（6 个命令 + 9 个子 agent）
-npx cc-sdd@latest --cursor --lang zh-TW     # Cursor IDE（支持任意语言）
-npx cc-sdd@latest --gemini --lang es        # Gemini CLI
-npx cc-sdd@latest --codex --lang fr         # Codex CLI
-npx cc-sdd@latest --copilot --lang pt       # GitHub Copilot
-npx cc-sdd@latest --qwen --lang de          # Qwen Code
-npx cc-sdd@latest --opencode --lang en      # OpenCode（11 个命令）
-npx cc-sdd@latest --opencode-agent --lang ja # OpenCode Subagents（12 个命令 + 9 个子 agent）
-npx cc-sdd@latest --windsurf --lang ja      # Windsurf IDE
+npx yy-spec@latest --claude        # Claude Code（6 个工作流命令，en/ja/zh-TW/...）
+npx yy-spec@latest --claude-agent --lang ja  # Claude Code Agents（6 个命令 + 9 个子 agent）
+npx yy-spec@latest --cursor --lang zh-TW     # Cursor IDE（支持任意语言）
+npx yy-spec@latest --gemini --lang es        # Gemini CLI
+npx yy-spec@latest --codex --lang fr         # Codex CLI
+npx yy-spec@latest --copilot --lang pt       # GitHub Copilot
+npx yy-spec@latest --qwen --lang de          # Qwen Code
+npx yy-spec@latest --opencode --lang en      # OpenCode（11 个命令）
+npx yy-spec@latest --opencode-agent --lang ja # OpenCode Subagents（12 个命令 + 9 个子 agent）
+npx yy-spec@latest --windsurf --lang ja      # Windsurf IDE
 
 # 注意：@next 现已保留用于未来的 alpha/beta 版本
 ```
@@ -71,7 +71,7 @@ npx cc-sdd@latest --windsurf --lang ja      # Windsurf IDE
 | Arabic | `ar` | 🇸🇦 |
 | Greek | `el` | 🇬🇷 |
 
-**用法**：`npx cc-sdd@latest --lang <code>`（例如 `--lang zh` 表示简体中文）
+**用法**：`npx yy-spec@latest --lang <code>`（例如 `--lang zh` 表示简体中文）
 
 ## ✨ 快速开始
 
@@ -108,7 +108,7 @@ npx cc-sdd@latest --windsurf --lang ja      # Windsurf IDE
 
 **30 秒完成设置** → **AI 驱动的"冲刺闪电战"（bolts）** → **小时级交付结果**
 
-### 为什么团队要安装 cc-sdd
+### 为什么团队要安装 yy-spec
 1. **单一真相来源规格** — 需求、设计、任务和相关参考保持同步，让审查者更快批准。
 2. **全新或遗留项目均适用** — 全新功能可在几分钟内启动，而验证门禁和项目记忆使遗留系统升级更安全。
 3. **混合任意 agent** — 相同的模板和规则同时驱动 Claude、Cursor、Codex、Gemini、Copilot、Qwen 和 Windsurf。
@@ -206,14 +206,14 @@ npx cc-sdd@latest --windsurf --lang ja      # Windsurf IDE
 
 ```bash
 # 语言和平台
-npx cc-sdd@latest --lang zh            # macOS / Linux / Windows（自动检测）
-npx cc-sdd@latest --lang zh --os mac   # 可选显式覆盖（旧版标志）
+npx yy-spec@latest --lang zh            # macOS / Linux / Windows（自动检测）
+npx yy-spec@latest --lang zh --os mac   # 可选显式覆盖（旧版标志）
 
 # 安全操作
-npx cc-sdd@latest --dry-run --backup
+npx yy-spec@latest --dry-run --backup
 
 # 自定义目录
-npx cc-sdd@latest --kiro-dir docs
+npx yy-spec@latest --kiro-dir docs
 ```
 
 ## 📁 项目结构

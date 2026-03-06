@@ -1,7 +1,7 @@
-# cc-sdd: Spec-driven development for your team's workflow
+# yy-spec: Spec-driven development for your team's workflow
 
-[![npm version](https://img.shields.io/npm/v/cc-sdd?logo=npm)](https://www.npmjs.com/package/cc-sdd?activeTab=readme)
-[![install size](https://packagephobia.com/badge?p=cc-sdd)](https://packagephobia.com/result?p=cc-sdd)
+[![npm version](https://img.shields.io/npm/v/yy-spec?logo=npm)](https://www.npmjs.com/package/yy-spec?activeTab=readme)
+[![install size](https://packagephobia.com/badge?p=yy-spec)](https://packagephobia.com/result?p=yy-spec)
 [![license: MIT](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
 
 <div align="center" style="margin-bottom: 1rem; font-size: 1.1rem;"><sub>
@@ -21,7 +21,7 @@ English | <a href="./README_zh.md">简体中文</a>
 
 ---
 
-> Need the legacy flow? Use `npx cc-sdd@1.1.5`. Upgrading from v1.x?
+> Need the legacy flow? Use `npx yy-spec@1.1.5`. Upgrading from v1.x?
 > See the Migration Guide: [English](../../docs/guides/migration-guide.md) | [简体中文](../../docs/guides/zh/migration-guide.md).
 
 ## 🚀 Installation
@@ -30,24 +30,24 @@ Run one command to install **AI-DLC** (AI Driven Development Lifecycle) with **S
 
 ```bash
 # Basic installation (defaults: English docs, Claude Code)
-npx cc-sdd@latest
+npx yy-spec@latest
 
 # With language options (default: --lang en)
-npx cc-sdd@latest --lang zh    # Simplified Chinese
-npx cc-sdd@latest --lang es    # Spanish
+npx yy-spec@latest --lang zh    # Simplified Chinese
+npx yy-spec@latest --lang es    # Spanish
 ... (en, ja, zh-TW, zh, es, pt, de, fr, ru, it, ko, ar, el supported)
 
 # With agent options (default: claude-code / --claude)
-npx cc-sdd@latest --claude        # Claude Code (6 workflow commands, en/zh/...)
-npx cc-sdd@latest --claude-agent --lang zh  # Claude Code Agents (6 commands + 9 subagents)
-npx cc-sdd@latest --cursor --lang es        # Cursor IDE (choose any supported lang)
-npx cc-sdd@latest --gemini --lang es        # Gemini CLI
-npx cc-sdd@latest --codex --lang fr         # Codex CLI
-npx cc-sdd@latest --copilot --lang pt       # GitHub Copilot
-npx cc-sdd@latest --qwen --lang de          # Qwen Code
-npx cc-sdd@latest --opencode --lang en      # OpenCode (11 commands)
-npx cc-sdd@latest --opencode-agent --lang zh # OpenCode Subagents (12 commands + 9 subagents)
-npx cc-sdd@latest --windsurf --lang zh      # Windsurf IDE
+npx yy-spec@latest --claude        # Claude Code (6 workflow commands, en/zh/...)
+npx yy-spec@latest --claude-agent --lang zh  # Claude Code Agents (6 commands + 9 subagents)
+npx yy-spec@latest --cursor --lang es        # Cursor IDE (choose any supported lang)
+npx yy-spec@latest --gemini --lang es        # Gemini CLI
+npx yy-spec@latest --codex --lang fr         # Codex CLI
+npx yy-spec@latest --copilot --lang pt       # GitHub Copilot
+npx yy-spec@latest --qwen --lang de          # Qwen Code
+npx yy-spec@latest --opencode --lang en      # OpenCode (11 commands)
+npx yy-spec@latest --opencode-agent --lang zh # OpenCode Subagents (12 commands + 9 subagents)
+npx yy-spec@latest --windsurf --lang zh      # Windsurf IDE
 
 # Note: @next is now reserved for future alpha/beta versions
 ```
@@ -70,7 +70,7 @@ npx cc-sdd@latest --windsurf --lang zh      # Windsurf IDE
 | Arabic | `ar` | 🇸🇦 |
 | Greek | `el` | 🇬🇷 |
 
-**Usage**: `npx cc-sdd@latest --lang <code>` (e.g., `--lang ja` for Japanese)
+**Usage**: `npx yy-spec@latest --lang <code>` (e.g., `--lang ja` for Japanese)
 
 ## ✨ Quick Start
 
@@ -115,7 +115,7 @@ npx cc-sdd@latest --windsurf --lang zh      # Windsurf IDE
 
 **30-second setup** → **AI-driven "bolts" (not sprints)** → **Hours-to-delivery results**
 
-### Why teams install cc-sdd
+### Why teams install yy-spec
 1. **Single source specs** – requirements, design, tasks, and supporting references stay in sync, so reviewers approve faster.
 2. **Greenfield or brownfield** – net-new features boot in minutes, while validate gates and project memory keep legacy upgrades safe.
 3. **Mix any agent** – the same templates and rules power Claude, Cursor, Codex, Gemini, Copilot, Qwen, and Windsurf simultaneously.
@@ -213,14 +213,14 @@ Edit templates in `{{KIRO_DIR}}/settings/templates/` to match your workflow. Kee
 
 ```bash
 # Language and platform
-npx cc-sdd@latest --lang zh            # macOS / Linux / Windows (auto-detected)
-npx cc-sdd@latest --lang zh --os mac   # Optional explicit override (legacy flag)
+npx yy-spec@latest --lang zh            # macOS / Linux / Windows (auto-detected)
+npx yy-spec@latest --lang zh --os mac   # Optional explicit override (legacy flag)
 
 # Safe operations  
-npx cc-sdd@latest --dry-run --backup
+npx yy-spec@latest --dry-run --backup
 
 # Custom directory
-npx cc-sdd@latest --kiro-dir docs
+npx yy-spec@latest --kiro-dir docs
 ```
 
 ## 📁 Project Structure

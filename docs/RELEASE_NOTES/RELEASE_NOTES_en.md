@@ -1,6 +1,6 @@
 # Release Notes
 
-New features and improvements for cc-sdd. See [CHANGELOG.md](../../CHANGELOG.md) for technical changes.
+New features and improvements for yy-spec. See [CHANGELOG.md](../../CHANGELOG.md) for technical changes.
 
 ---
 
@@ -36,7 +36,7 @@ No unreleased features at this time. The latest stable release is v2.1.1.
   - `.opencode/commands/` with all 11 kiro commands
   - OpenCode Agents (subagent version) in `.opencode/agents/`
   - OPENCODE.md project memory template
-  - Installation: `npx cc-sdd@latest --opencode` or `--opencode-agent`
+  - Installation: `npx yy-spec@latest --opencode` or `--opencode-agent`
 
 ### 🔧 Changed
 - Updated recommended models ([#128](https://github.com/gotalab/cc-sdd/pull/128), [#129](https://github.com/gotalab/cc-sdd/pull/129))
@@ -76,7 +76,7 @@ No unreleased features at this time. The latest stable release is v2.1.1.
 - Fixed registry.ts with review improvements.
 
 ### Documentation
-- Added AI-Assisted SDD book reference to cc-sdd documentation.
+- Added AI-Assisted SDD book reference to yy-spec documentation.
 
 ### New Contributors
 * @irisTa56 made their first contribution in #118
@@ -120,14 +120,14 @@ Documentation-only release improving README clarity and visual consistency.
 ## 🎉 Ver 2.0.0 (2025-11-09) – Stable Release
 
 ### Highlights at a Glance
-- **`npx cc-sdd@latest` = full stack SDD**: all alpha capabilities (research.md, validation commands, Subagents, Windsurf) are now GA.
+- **`npx yy-spec@latest` = full stack SDD**: all alpha capabilities (research.md, validation commands, Subagents, Windsurf) are now GA.
 - **Spec-to-impl fidelity**: Research/Design/Tasks templates now enforce requirement IDs, component density rules, and Supporting References for long-form details.
 - **Brownfield guardrails**: `/yy:validate-*` commands, parallel-task analysis, and steering-wide project memory reduce drift before any code change.
 - **Global parity**: 7 AI agents × 13 languages share the same templates, prompts, and installation flow.
 
 ### Upgrade Essentials
 1. Follow the [Migration Guide](../guides/migration-guide.md) for template layout changes (`.yy-dev/settings/templates/*`) and new steering behavior (directory-wide load).
-2. Update automation/scripts to call `npx cc-sdd@latest` (the `@next` tag is reserved for future previews).
+2. Update automation/scripts to call `npx yy-spec@latest` (the `@next` tag is reserved for future previews).
 3. Regenerate steering + spec templates once to pick up Research.md, the new design rules, and tasks parallel markers.
 
 ### Key Capabilities in this release
@@ -204,7 +204,7 @@ Once your project templates are regenerated on v2.0.0, all spec/todo automation 
 ## 🚀 Ver 2.0.0-alpha.3 (2025-10-22)
 
 ### 🎯 Highlights
-- **Windsurf IDE support**: Added a dedicated manifest, workflow templates under `.windsurf/workflows/`, and an AGENTS.md quickstart so Windsurf users can run the full kiro Spec-Driven Development workflow with `npx cc-sdd@next --windsurf`.
+- **Windsurf IDE support**: Added a dedicated manifest, workflow templates under `.windsurf/workflows/`, and an AGENTS.md quickstart so Windsurf users can run the full kiro Spec-Driven Development workflow with `npx yy-spec@next --windsurf`.
 - **CLI experience refresh**: Updated completion guides and recommended models so the setup summary now points Windsurf users to the correct follow-up commands and manual QA flow.
 
 ### 🧪 Quality & Tooling
@@ -212,7 +212,7 @@ Once your project templates are regenerated on v2.0.0, all spec/todo automation 
 - Extended CLI argument parsing to recognize the `--windsurf` alias and ensured the agent registry emits the correct layout metadata.
 
 ### 📚 Documentation
-- Refreshed the root README, CLI docs (`tools/cc-sdd/README*`), and legacy guides (`docs/README/README_{en,ja,zh-TW}.md`) with Windsurf instructions, updated quick-start matrices, and the manual QA checklist using `npx cc-sdd@next --windsurf`.
+- Refreshed the root README, CLI docs (`tools/cc-sdd/README*`), and legacy guides (`docs/README/README_{en,ja,zh-TW}.md`) with Windsurf instructions, updated quick-start matrices, and the manual QA checklist using `npx yy-spec@next --windsurf`.
 
 ### 📈 Key Metrics
 - **Supported platforms**: 7 (Claude Code, Cursor IDE, Gemini CLI, Codex CLI, GitHub Copilot, Qwen Code, Windsurf IDE)
@@ -298,10 +298,10 @@ Unified spec-driven development across four platforms
 - ⚡ **Gemini CLI** - TOML structured configuration
 - 🧠 **Codex CLI** - GPT-5 optimized prompt design
 
-### 📦 cc-sdd Package Distribution Started
-[cc-sdd](https://www.npmjs.com/package/cc-sdd) - AI-DLC + Spec Driven Development
+### 📦 yy-spec Package Distribution Started
+[yy-spec](https://www.npmjs.com/package/yy-spec) - AI-DLC + Spec Driven Development
 - Claude Code & Gemini CLI support
-- Installable via `npx cc-sdd@latest`
+- Installable via `npx yy-spec@latest`
 
 ### 🔄 Development Workflow Complete Overhaul
 Fundamental review of entire spec-driven development workflow

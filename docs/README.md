@@ -1,6 +1,6 @@
-# cc-sdd Documentation Index
+# yy-spec Documentation Index
 
-Quick pointers to the most relevant guides, workflows, and historical notes for cc-sdd.
+Quick pointers to the most relevant guides, workflows, and historical notes for yy-spec.
 
 ## Current Guides
 

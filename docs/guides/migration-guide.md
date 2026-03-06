@@ -1,8 +1,8 @@
-# cc-sdd Migration Guide
+# yy-spec Migration Guide
 
 > 📖 **简体中文版:** [迁移指南](zh/migration-guide.md)
 
-cc-sdd 1.x (especially 1.1.5) and 2.0.0 share the same AI-DLC philosophy and command list, but the **design artifacts, templates, and steering structure were rebuilt from the ground up**. Use this guide to pick one of two clear paths—either keep running 1.1.5 as-is, or accept the discontinuity and move to 2.0.0 where templates/rules make customization instant.
+yy-spec 1.x (especially 1.1.5) and 2.0.0 share the same AI-DLC philosophy and command list, but the **design artifacts, templates, and steering structure were rebuilt from the ground up**. Use this guide to pick one of two clear paths—either keep running 1.1.5 as-is, or accept the discontinuity and move to 2.0.0 where templates/rules make customization instant.
 
 ---
 
@@ -10,8 +10,8 @@ cc-sdd 1.x (especially 1.1.5) and 2.0.0 share the same AI-DLC philosophy and com
 
 | Goal | Recommended action |
 | --- | --- |
-| Keep the legacy 1.x workflow untouched | Run `npx cc-sdd@1.1.5` whenever you install/refresh files. Continue editing agent-specific prompt folders (only the original 8 spec/steering commands exist). |
-| Adopt unified templates, research/design split, and consistent behavior across all 8 supported agents | Reinstall with `npx cc-sdd@latest` (=2.0.0) and customize only `.yy-dev/settings/templates/*` plus `.yy-dev/settings/rules/` (full 11-command set, including validate-*). |
+| Keep the legacy 1.x workflow untouched | Run `npx yy-spec@1.1.5` whenever you install/refresh files. Continue editing agent-specific prompt folders (only the original 8 spec/steering commands exist). |
+| Adopt unified templates, research/design split, and consistent behavior across all 8 supported agents | Reinstall with `npx yy-spec@latest` (=2.0.0) and customize only `.yy-dev/settings/templates/*` plus `.yy-dev/settings/rules/` (full 11-command set, including validate-*). |
 
 > ⚠️ Mixing 1.x and 2.x layouts in the same `.kiro` tree is not supported. Pick one path per repo/branch.
 
@@ -23,13 +23,13 @@ cc-sdd 1.x (especially 1.1.5) and 2.0.0 share the same AI-DLC philosophy and com
 
 ---
 
-## 1. Staying on cc-sdd 1.1.5 (fallback option)
+## 1. Staying on yy-spec 1.1.5 (fallback option)
 
 1.1.5 is no longer on `@latest`, but you can pin it explicitly:
 
 ```bash
-npx cc-sdd@1.1.5 --claude-code   # legacy flag name (use --cursor / --gemini / etc. for others)
-npx cc-sdd@1.1.5 --lang ja       # legacy i18n flags still work
+npx yy-spec@1.1.5 --claude-code   # legacy flag name (use --cursor / --gemini / etc. for others)
+npx yy-spec@1.1.5 --lang ja       # legacy i18n flags still work
 ```
 
 - You can keep editing `.claude/commands/*`, `.cursor/prompts/*`, `.codex/prompts/*` などのエージェント別フォルダを直接編集するスタイルで運用できます。
@@ -61,9 +61,9 @@ npx cc-sdd@1.1.5 --lang ja       # legacy i18n flags still work
 
 2. **Install v2 cleanly (reuse interactive choices)**
    ```bash
-   npx cc-sdd@latest                 # default (Claude Code)
-   npx cc-sdd@latest --cursor        # other agents
-   npx cc-sdd@latest --claude-agent  # Subagents mode
+   npx yy-spec@latest                 # default (Claude Code)
+   npx yy-spec@latest --cursor        # other agents
+   npx yy-spec@latest --claude-agent  # Subagents mode
    ```
    - The installer now prompts per file group (overwrite / append / keep). You can choose “append” for steering/specs to merge existing documents, or “keep” to skip untouched assets.
 
@@ -80,7 +80,7 @@ npx cc-sdd@1.1.5 --lang ja       # legacy i18n flags still work
    - Research/design templates reference this folder, so migrate existing notes here.
 
 6. **Update automation**
-   - Point all scripts/docs to `npx cc-sdd@latest`; retire `@next` usage.
+   - Point all scripts/docs to `npx yy-spec@latest`; retire `@next` usage.
    - Map old manual command invocations to the 11 supported ones (`spec-*`, `validate-*`, `steering*`).
 
 ---

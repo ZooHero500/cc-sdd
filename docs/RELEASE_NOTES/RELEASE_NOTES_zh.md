@@ -1,6 +1,6 @@
 # 发布说明
 
-cc-sdd 的新功能与改进。技术变更详情请参阅 [CHANGELOG.md](../../CHANGELOG.md)。
+yy-spec 的新功能与改进。技术变更详情请参阅 [CHANGELOG.md](../../CHANGELOG.md)。
 
 ---
 
@@ -36,7 +36,7 @@ cc-sdd 的新功能与改进。技术变更详情请参阅 [CHANGELOG.md](../../
   - `.opencode/commands/` 包含全部 11 个 kiro 命令
   - OpenCode Agents（subagent 版本）位于 `.opencode/agents/`
   - OPENCODE.md 项目记忆模板
-  - 安装方式：`npx cc-sdd@latest --opencode` 或 `--opencode-agent`
+  - 安装方式：`npx yy-spec@latest --opencode` 或 `--opencode-agent`
 
 ### 🔧 变更
 - 更新推荐模型（[#128](https://github.com/gotalab/cc-sdd/pull/128)、[#129](https://github.com/gotalab/cc-sdd/pull/129)）
@@ -76,7 +76,7 @@ cc-sdd 的新功能与改进。技术变更详情请参阅 [CHANGELOG.md](../../
 - 修复 registry.ts 并进行代码审查改进。
 
 ### 文档
-- 在 cc-sdd 文档中添加了 AI-Assisted SDD 书籍参考链接。
+- 在 yy-spec 文档中添加了 AI-Assisted SDD 书籍参考链接。
 
 ### 新贡献者
 * @irisTa56 在 #118 中完成了首次贡献
@@ -120,14 +120,14 @@ cc-sdd 的新功能与改进。技术变更详情请参阅 [CHANGELOG.md](../../
 ## 🎉 Ver 2.0.0（2025-11-09）——正式稳定版
 
 ### 一览亮点
-- **`npx cc-sdd@latest` = 全栈 SDD**：所有 alpha 阶段功能（research.md、验证命令、Subagents、Windsurf）现已正式发布（GA）。
+- **`npx yy-spec@latest` = 全栈 SDD**：所有 alpha 阶段功能（research.md、验证命令、Subagents、Windsurf）现已正式发布（GA）。
 - **规格到实现的高保真度**：Research/Design/Tasks 模板现在强制使用需求 ID、组件密度规则以及详细内容的 Supporting References。
 - **存量项目防护栏**：`/yy:validate-*` 命令、并行任务分析以及全局项目记忆，在任何代码变更前减少偏差。
 - **全球一致性**：7 个 AI agent × 13 种语言共享相同的模板、提示词和安装流程。
 
 ### 升级要点
 1. 参照 [迁移指南](../guides/migration-guide.md) 了解模板布局变更（`.yy-dev/settings/templates/*`）及新的 steering 行为（目录级加载）。
-2. 将自动化脚本更新为调用 `npx cc-sdd@latest`（`@next` 标签保留用于未来预览版）。
+2. 将自动化脚本更新为调用 `npx yy-spec@latest`（`@next` 标签保留用于未来预览版）。
 3. 重新生成 steering 和规格模板，以获取 Research.md、新设计规则和任务并行标记。
 
 ### 本版本核心功能
@@ -204,7 +204,7 @@ cc-sdd 的新功能与改进。技术变更详情请参阅 [CHANGELOG.md](../../
 ## 🚀 Ver 2.0.0-alpha.3（2025-10-22）
 
 ### 🎯 亮点
-- **Windsurf IDE 支持**：新增专属 manifest、位于 `.windsurf/workflows/` 下的工作流模板以及 AGENTS.md 快速入门，Windsurf 用户可通过 `npx cc-sdd@next --windsurf` 运行完整的 kiro Spec-Driven Development 工作流程。
+- **Windsurf IDE 支持**：新增专属 manifest、位于 `.windsurf/workflows/` 下的工作流模板以及 AGENTS.md 快速入门，Windsurf 用户可通过 `npx yy-spec@next --windsurf` 运行完整的 kiro Spec-Driven Development 工作流程。
 - **CLI 体验优化**：更新补全指南和推荐模型，使安装摘要现在可将 Windsurf 用户引导至正确的后续命令和手动 QA 流程。
 
 ### 🧪 质量与工具
@@ -212,7 +212,7 @@ cc-sdd 的新功能与改进。技术变更详情请参阅 [CHANGELOG.md](../../
 - 扩展 CLI 参数解析以识别 `--windsurf` 别名，并确保 agent 注册表正确输出布局元数据。
 
 ### 📚 文档
-- 更新根目录 README、CLI 文档（`tools/cc-sdd/README*`）及历史指南（`docs/README/README_{en,zh-TW}.md`），添加 Windsurf 说明、更新的快速入门矩阵，以及使用 `npx cc-sdd@next --windsurf` 的手动 QA 检查清单。
+- 更新根目录 README、CLI 文档（`tools/cc-sdd/README*`）及历史指南（`docs/README/README_{en,zh-TW}.md`），添加 Windsurf 说明、更新的快速入门矩阵，以及使用 `npx yy-spec@next --windsurf` 的手动 QA 检查清单。
 
 ### 📈 关键指标
 - **支持的平台**：7 个（Claude Code、Cursor IDE、Gemini CLI、Codex CLI、GitHub Copilot、Qwen Code、Windsurf IDE）
@@ -298,10 +298,10 @@ cc-sdd 的新功能与改进。技术变更详情请参阅 [CHANGELOG.md](../../
 - ⚡ **Gemini CLI** — TOML 结构化配置
 - 🧠 **Codex CLI** — GPT-5 优化提示词设计
 
-### 📦 cc-sdd 包发布
-[cc-sdd](https://www.npmjs.com/package/cc-sdd) — AI-DLC + Spec Driven Development
+### 📦 yy-spec 包发布
+[yy-spec](https://www.npmjs.com/package/yy-spec) — AI-DLC + Spec Driven Development
 - 支持 Claude Code 和 Gemini CLI
-- 可通过 `npx cc-sdd@latest` 安装
+- 可通过 `npx yy-spec@latest` 安装
 
 ### 🔄 开发工作流程全面重构
 对整个规格驱动开发工作流程进行根本性审查

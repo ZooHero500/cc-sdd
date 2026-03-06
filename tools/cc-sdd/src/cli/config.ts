@@ -41,7 +41,7 @@ const defaults = {
   lang: 'en' as SupportedLanguage,
   kiroDir: '.yy-dev',
   overwrite: 'prompt' as OverwritePolicy,
-  backupDir: '.cc-sdd.backup',
+  backupDir: '.yy-spec.backup',
 };
 
 export type EnvRuntime = { platform?: string; env?: Record<string, string | undefined> };

@@ -2,7 +2,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import type { UserConfig } from './config.js';
 
-export const CONFIG_FILE = '.cc-sdd.json';
+export const CONFIG_FILE = '.yy-spec.json';
 
 export const resolveConfigPath = (cwd: string): string => join(cwd, CONFIG_FILE);
 

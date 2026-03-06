@@ -33,8 +33,8 @@ describe('parseArgs', () => {
 
   it('parses backup with and without value', () => {
     expect(parseArgs(['--backup']).backup).toBe(true);
-    expect(parseArgs(['--backup', '.cc-sdd.backup']).backup).toBe('.cc-sdd.backup');
-    expect(parseArgs(['--backup=.cc-sdd.backup/custom']).backup).toBe('.cc-sdd.backup/custom');
+    expect(parseArgs(['--backup', '.yy-spec.backup']).backup).toBe('.yy-spec.backup');
+    expect(parseArgs(['--backup=.yy-spec.backup/custom']).backup).toBe('.yy-spec.backup/custom');
   });
 
   it('supports agent alias flags and detects conflicts', () => {

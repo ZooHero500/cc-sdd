@@ -23,12 +23,12 @@ describe('config store edge cases', () => {
   it('resolveConfigPath returns correct path', () => {
     const cwd = '/some/path';
     const configPath = resolveConfigPath(cwd);
-    expect(configPath).toBe('/some/path/.cc-sdd.json');
+    expect(configPath).toBe('/some/path/.yy-spec.json');
   });
 
   it('handles null config object in JSON', async () => {
     const dir = await mkTmp();
-    const file = join(dir, '.cc-sdd.json');
+    const file = join(dir, '.yy-spec.json');
     await writeFile(file, 'null', 'utf8');
     
     const cfg = await loadUserConfig(dir);
@@ -50,7 +50,7 @@ describe('config store edge cases', () => {
     await saveUserConfig(dir, config);
     
     // Read raw file content to verify formatting
-    const file = join(dir, '.cc-sdd.json');
+    const file = join(dir, '.yy-spec.json');
     const raw = await require('node:fs/promises').readFile(file, 'utf8');
     
     expect(raw).toMatch(/^{\s*\n/); // Starts with formatted JSON

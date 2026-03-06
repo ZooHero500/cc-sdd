@@ -34,7 +34,7 @@ describe('config store', () => {
     };
     await saveUserConfig(dir, input);
 
-    const file = join(dir, '.cc-sdd.json');
+    const file = join(dir, '.yy-spec.json');
     const st = await stat(file);
     expect(st.isFile()).toBe(true);
 
@@ -47,7 +47,7 @@ describe('config store', () => {
 
   it('throws a helpful error when JSON is invalid', async () => {
     const dir = await mkTmp();
-    const file = join(dir, '.cc-sdd.json');
+    const file = join(dir, '.yy-spec.json');
     await writeFile(file, '{ invalid json', 'utf8');
     await expect(loadUserConfig(dir)).rejects.toThrow(/Invalid JSON/);
   });

@@ -2,7 +2,7 @@
 
 > 📖 **简体中文指南（本页）** | [English](../command-reference.md)
 
-所有 cc-sdd 命令的完整参考，包含详细用法、示例和故障排查。
+所有 yy-spec 命令的完整参考，包含详细用法、示例和故障排查。
 
 > **注意**：本参考基于 Claude Code 命令模板（13 条命令：6 条自动工作流 + 7 条分步工作流）。其他 Agent（Cursor、Gemini CLI、Codex CLI、GitHub Copilot、Qwen Code、Windsurf）共享相同的分步命令，但使用 `spec-init` 代替自动工作流命令。命令分隔符因 Agent 而异——请查看您的 Agent 所安装的命令以了解确切语法。
 
@@ -1388,7 +1388,7 @@ From conversation history:
 
 ### "Template missing"
 **原因**：安装损坏或不完整
-**解决方案**：重新安装 cc-sdd：`npx cc-sdd@latest`
+**解决方案**：重新安装 yy-spec：`npx yy-spec@latest`
 
 ### 任务未完成
 **原因**：tasks.md 中的复选框格式不正确
@@ -1412,7 +1412,7 @@ From conversation history:
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│ cc-sdd 命令快速参考（Claude Code：13 条命令）               │
+│ yy-spec 命令快速参考（Claude Code：13 条命令）               │
 ├─────────────────────────────────────────────────────────────┤
 │ 自动工作流（端到端，自动完成）                              │
 │  /yy:steering              创建/更新项目记忆               │

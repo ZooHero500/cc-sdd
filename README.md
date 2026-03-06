@@ -1,8 +1,8 @@
-# cc-sdd：规格驱动开发，适配你的团队工作流
+# yy-spec：规格驱动开发，适配你的团队工作流
 
 <!-- npm badges -->
-[![npm version](https://img.shields.io/npm/v/cc-sdd?logo=npm)](https://www.npmjs.com/package/cc-sdd?activeTab=readme)
-[![install size](https://packagephobia.com/badge?p=cc-sdd)](https://packagephobia.com/result?p=cc-sdd)
+[![npm version](https://img.shields.io/npm/v/yy-spec?logo=npm)](https://www.npmjs.com/package/yy-spec?activeTab=readme)
+[![install size](https://packagephobia.com/badge?p=yy-spec)](https://packagephobia.com/result?p=yy-spec)
 [![license: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
 
 <div align="center" style="font-size: 1.1rem; margin-bottom: 1rem;"><sub>
@@ -13,7 +13,7 @@
 
 **一条命令安装。小时级交付。需求 → 设计 → 任务 → 实现。**
 
-告别 70% 的时间浪费在会议、文档仪式和零散上下文上。cc-sdd 为 Claude Code、Cursor、Gemini CLI、Codex CLI、GitHub Copilot、Qwen Code、OpenCode 和 Windsurf 带来结构化的 **AI-DLC**（AI 驱动开发生命周期）与 **规格驱动开发**。
+告别 70% 的时间浪费在会议、文档仪式和零散上下文上。yy-spec 为 Claude Code、Cursor、Gemini CLI、Codex CLI、GitHub Copilot、Qwen Code、OpenCode 和 Windsurf 带来结构化的 **AI-DLC**（AI 驱动开发生命周期）与 **规格驱动开发**。
 
 ### 你将获得：
 - **规格优先保障** — 先审批需求和设计，AI 再严格按规格实现
@@ -28,7 +28,7 @@
 ```bash
 # 在项目根目录运行
 cd your-project
-npx cc-sdd@latest --claude --lang zh    ## Claude Code（简体中文）
+npx yy-spec@latest --claude --lang zh    ## Claude Code（简体中文）
 
 # 安装完成！现在运行：
 /yy:steering                            # 首次使用必须先建立项目上下文
@@ -43,7 +43,7 @@ npx cc-sdd@latest --claude --lang zh    ## Claude Code（简体中文）
 
 ## 🎯 应用场景与命令详解
 
-cc-sdd 提供两类工作流：**自动工作流**（端到端自闭环）和**分步工作流**（每阶段手动控制）。以下按实际开发场景说明何时使用哪些命令。
+yy-spec 提供两类工作流：**自动工作流**（端到端自闭环）和**分步工作流**（每阶段手动控制）。以下按实际开发场景说明何时使用哪些命令。
 
 ### 前置条件：建立项目上下文
 
@@ -372,32 +372,32 @@ AI 系统化调查：分析日志 → 对比正常/异常路径 → 测试假设
 ### 选择你的 Agent
 
 ```bash
-npx cc-sdd@latest --claude         # Claude Code（13 个命令）[默认]
-npx cc-sdd@latest --claude-agent   # Claude Code Subagents（13 个命令 + 9 个子 Agent）
-npx cc-sdd@latest --cursor         # Cursor IDE
-npx cc-sdd@latest --gemini         # Gemini CLI
-npx cc-sdd@latest --codex          # Codex CLI
-npx cc-sdd@latest --copilot        # GitHub Copilot
-npx cc-sdd@latest --qwen           # Qwen Code
-npx cc-sdd@latest --opencode       # OpenCode（11 个命令）
-npx cc-sdd@latest --opencode-agent # OpenCode Subagents（12 个命令 + 9 个子 Agent）
-npx cc-sdd@latest --windsurf       # Windsurf IDE
+npx yy-spec@latest --claude         # Claude Code（13 个命令）[默认]
+npx yy-spec@latest --claude-agent   # Claude Code Subagents（13 个命令 + 9 个子 Agent）
+npx yy-spec@latest --cursor         # Cursor IDE
+npx yy-spec@latest --gemini         # Gemini CLI
+npx yy-spec@latest --codex          # Codex CLI
+npx yy-spec@latest --copilot        # GitHub Copilot
+npx yy-spec@latest --qwen           # Qwen Code
+npx yy-spec@latest --opencode       # OpenCode（11 个命令）
+npx yy-spec@latest --opencode-agent # OpenCode Subagents（12 个命令 + 9 个子 Agent）
+npx yy-spec@latest --windsurf       # Windsurf IDE
 ```
 
 ### 选择输出语言
 
 ```bash
-npx cc-sdd@latest --lang zh        # 简体中文
-npx cc-sdd@latest --lang en        # English
-npx cc-sdd@latest --lang es        # Spanish
+npx yy-spec@latest --lang zh        # 简体中文
+npx yy-spec@latest --lang en        # English
+npx yy-spec@latest --lang es        # Spanish
 # 支持：en, ja, zh-TW, zh, es, pt, de, fr, ru, it, ko, ar, el
 ```
 
 ### 其他选项
 
 ```bash
-npx cc-sdd@latest --dry-run        # 预览变更，不实际写入
-npx cc-sdd@latest --kiro-dir docs  # 自定义规格目录
+npx yy-spec@latest --dry-run        # 预览变更，不实际写入
+npx yy-spec@latest --kiro-dir docs  # 自定义规格目录
 ```
 
 ### 各 Agent 命令分隔符

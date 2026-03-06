@@ -2,7 +2,7 @@
 
 > 📖 **简体中文版:** [规格驱动开发工作流](zh/spec-driven.md)
 
-This document explains how cc-sdd implements Spec-Driven Development (SDD) inside the AI-Driven Development Life Cycle (AI-DLC). Use it as a reference when deciding which slash command to run, what artifact to review, and how to adapt the workflow to your team.
+This document explains how yy-spec implements Spec-Driven Development (SDD) inside the AI-Driven Development Life Cycle (AI-DLC). Use it as a reference when deciding which slash command to run, what artifact to review, and how to adapt the workflow to your team.
 
 ## Lifecycle Overview
 
@@ -48,7 +48,7 @@ Each phase pauses for human review unless you explicitly bypass it (for example 
 
 ## Customising the Workflow
 
-- **Templates** – adjust `{{KIRO_DIR}}/settings/templates/{requirements,design,tasks}.md` to mirror your review process. cc-sdd copies these into every spec.
+- **Templates** – adjust `{{KIRO_DIR}}/settings/templates/{requirements,design,tasks}.md` to mirror your review process. yy-spec copies these into every spec.
 - **Approvals** – embed checklists or required sign-offs in template headers. Agents will surface them during each phase.
 - **Artifacts** – extend templates with additional sections (risk logs, test plans, etc.) to make the generated documents match company standards.
 
