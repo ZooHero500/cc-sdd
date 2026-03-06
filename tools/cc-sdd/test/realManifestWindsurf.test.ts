@@ -70,9 +70,8 @@ describe('real windsurf manifest', () => {
     expect(out).toContain('Claude Opus 4.5');
     expect(out).toContain('gpt-5.2-codex');
     expect(out).toContain('gpt-5.2');
-    expect(out).toContain('Launch Windsurf IDE and run `/kiro-spec-init <what-to-build>` to create a new specification.');
-    expect(out).toMatch(
-      /Tip: Steering holds persistent project knowledge—patterns, standards, and org-wide policies\. Kick off `\/kiro-steering` \(essential for existing projects\) and\s+`\/kiro-steering-custom <what-to-create-custom-steering-document>`\. Maintain Regularly/,
-    );
+    expect(out).toContain("Run `/yy-steering` to establish project context (essential for existing projects).");
+    expect(out).toContain("Run `/yy-spec-init <what-to-build>` to start working.");
+    expect(out).toContain("Tip: Customize `{{KIRO_DIR}}/settings/templates/` to match your team's development process.");
   });
 });

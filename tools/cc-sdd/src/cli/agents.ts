@@ -42,9 +42,9 @@ export const ensureAgentSelection = async (
 const buildGuideSteps = (agent: AgentType): string[] => {
   const definition = getAgentDefinition(agent);
   const steps: string[] = [
-    `Launch ${definition.label} and run ${definition.commands.spec} to create a new specification.`,
-    `Tip: Steering holds persistent project knowledge—patterns, standards, and org-wide policies. Kick off ${definition.commands.steering} (essential for existing projects) and  ${definition.commands.steeringCustom}. Maintain Regularly`,
-    'Tip: Update `{{KIRO_DIR}}/settings/templates/` like `requirements.md`, `design.md`, and `tasks.md` so the generated steering and specs follow your team\'s and project\'s development process.',
+    `Run ${definition.commands.steering} to establish project context (essential for existing projects).`,
+    `Run ${definition.commands.spec} to start working.`,
+    'Tip: Customize `{{KIRO_DIR}}/settings/templates/` to match your team\'s development process.',
   ];
 
   if (definition.completionGuide?.prependSteps) {

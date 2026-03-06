@@ -22,7 +22,7 @@ describe('mergeConfigAndArgs', () => {
       dryRun: false,
     };
     expect(out).toMatchObject(expected);
-    expect(out.layout.commandsDir).toBe('.claude/commands/kiro');
+    expect(out.layout.commandsDir).toBe('.claude/commands/yy');
   });
 
   it('respects precedence: CLI > config > defaults', () => {

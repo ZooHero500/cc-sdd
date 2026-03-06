@@ -122,7 +122,7 @@ Documentation-only release improving README clarity and visual consistency.
 ### Highlights at a Glance
 - **`npx cc-sdd@latest` = full stack SDD**: all alpha capabilities (research.md, validation commands, Subagents, Windsurf) are now GA.
 - **Spec-to-impl fidelity**: Research/Design/Tasks templates now enforce requirement IDs, component density rules, and Supporting References for long-form details.
-- **Brownfield guardrails**: `/kiro:validate-*` commands, parallel-task analysis, and steering-wide project memory reduce drift before any code change.
+- **Brownfield guardrails**: `/yy:validate-*` commands, parallel-task analysis, and steering-wide project memory reduce drift before any code change.
 - **Global parity**: 7 AI agents × 13 languages share the same templates, prompts, and installation flow.
 
 ### Upgrade Essentials
@@ -175,7 +175,7 @@ Once your project templates are regenerated on v2.0.0, all spec/todo automation 
   - Project-specific rule examples
   - 7 practical customization examples
 - **Command Reference** ([#83](https://github.com/gotalab/cc-sdd/pull/83))
-  - Detailed usage for all 11 `/kiro:*` commands
+  - Detailed usage for all 11 `/yy:*` commands
   - Parameter descriptions and practical examples
 
 ### 🔧 Improvements
@@ -243,10 +243,10 @@ Once your project templates are regenerated on v2.0.0, all spec/todo automation 
 Enhanced spec-driven development for existing projects
 
 **New Quality Validation Commands**
-- 🔍 **`/kiro:validate-gap`** - Gap analysis between existing functionality and requirements
+- 🔍 **`/yy:validate-gap`** - Gap analysis between existing functionality and requirements
   - Execute before spec-design to clarify differences between current implementation and new requirements
   - Identify existing system understanding and integration points for new features
-- ✅ **`/kiro:validate-design`** - Design compatibility verification with existing architecture
+- ✅ **`/yy:validate-design`** - Design compatibility verification with existing architecture
   - Execute after spec-design to confirm design integration feasibility
   - Pre-detect conflicts and incompatibilities with existing systems
 
@@ -315,8 +315,8 @@ Fundamental review of entire spec-driven development workflow
 ### Major Kiro Spec-Driven Development Command Improvements
 
 **Workflow Efficiency**
-- Added `-y` flag: `/kiro:spec-design feature-name -y` skips requirements approval and generates design
-- `/kiro:spec-tasks feature-name -y` skips requirements+design approval and generates tasks  
+- Added `-y` flag: `/yy:spec-design feature-name -y` skips requirements approval and generates design
+- `/yy:spec-tasks feature-name -y` skips requirements+design approval and generates tasks  
 - Added argument-hint: Commands now auto-display `<feature-name> [-y]` during input
 - Traditional step-by-step approval still available (spec.json editing or interactive approval)
 
@@ -426,7 +426,7 @@ Fundamental review of entire spec-driven development workflow
 - Added detailed usage recommendations and guidance
 
 **Unified Steering Management Functions**
-- `/kiro:steering` command now properly handles existing files
+- `/yy:steering` command now properly handles existing files
 - More intuitive steering document management
 
 **Improved System Stability**
@@ -478,8 +478,8 @@ Significantly improved generation quality of requirements, design, and tasks doc
 ## Usage
 
 1. Copy **`.claude/commands/` directory** and **`CLAUDE.md` file** to your project
-2. Run `/kiro:steering` in Claude Code to configure project information
-3. Create new specifications with `/kiro:spec-init [feature-name]`
+2. Run `/yy:steering` in Claude Code to configure project information
+3. Create new specifications with `/yy:spec-init [feature-name]`
 4. Progress through development step by step: requirements → design → tasks
 
 For detailed usage instructions, see [README_en.md](README_en.md).

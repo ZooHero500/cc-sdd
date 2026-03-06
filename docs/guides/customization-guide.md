@@ -1,6 +1,6 @@
 # Customization Guide
 
-> 📖 日本語版はこちら: [カスタマイゼーションガイド](ja/customization-guide.md)
+> 📖 **简体中文版:** [自定义指南](zh/customization-guide.md)
 
 This guide explains how to edit cc-sdd's templates and rules to adapt to your team's specific workflow.
 
@@ -244,10 +244,10 @@ ls -la {{KIRO_DIR}}/settings/rules/
 
 ```bash
 # Test with new spec
-/kiro:spec-init Test customization feature
-/kiro:spec-requirements test-customization
-/kiro:spec-design test-customization
-/kiro:spec-tasks test-customization
+/yy:spec-init Test customization feature
+/yy:spec-requirements test-customization
+/yy:spec-design test-customization
+/yy:spec-tasks test-customization
 
 # Check generated files
 cat {{KIRO_DIR}}/specs/test-customization/requirements.md
@@ -467,14 +467,14 @@ Always include NFR sections for:
 
 ### ✅ Behavior After Completion
 
-When you run `/kiro:spec-requirements my-feature`:
+When you run `/yy:spec-requirements my-feature`:
 
 1. **Product Context** section is automatically generated
 2. Each requirement includes **Business Priority**, **Dependencies**, **Risk Level**
 3. **Verification Method** and **Success Threshold** are added to each requirement
 4. **Non-Functional Requirements** section is automatically generated
 5. **Compliance & Approvals** checklist is added
-6. Requirement numbering and acceptance criteria structure are maintained (compatible with `/kiro:spec-impl`)
+6. Requirement numbering and acceptance criteria structure are maintained (compatible with `/yy:spec-impl`)
 
 ### 🧪 Testing Method
 
@@ -486,8 +486,8 @@ vim {{KIRO_DIR}}/settings/templates/specs/requirements.md
 vim {{KIRO_DIR}}/settings/rules/ears-format.md
 
 # 3. Check with new spec
-/kiro:spec-init Test PRD-style requirements with business context
-/kiro:spec-requirements test-prd-feature
+/yy:spec-init Test PRD-style requirements with business context
+/yy:spec-requirements test-prd-feature
 
 # 4. Check generated requirements.md
 cat {{KIRO_DIR}}/specs/test-prd-feature/requirements.md
@@ -1021,7 +1021,7 @@ graph TB
 
 ### ✅ Behavior After Completion
 
-When you run `/kiro:spec-design my-backend-feature`:
+When you run `/yy:spec-design my-backend-feature`:
 
 1. **API Specification** generates detailed specs for all endpoints
 2. **Database Schema** explicitly defines tables, indexes, and constraints
@@ -1037,9 +1037,9 @@ When you run `/kiro:spec-design my-backend-feature`:
 vim {{KIRO_DIR}}/settings/templates/specs/design.md
 
 # 2. Check with new spec
-/kiro:spec-init Build RESTful API for user management
-/kiro:spec-requirements user-api
-/kiro:spec-design user-api
+/yy:spec-init Build RESTful API for user management
+/yy:spec-requirements user-api
+/yy:spec-design user-api
 
 # 3. Check generated design.md
 cat {{KIRO_DIR}}/specs/user-api/design.md
@@ -1056,7 +1056,7 @@ grep -A 10 "## Security" {{KIRO_DIR}}/specs/user-api/design.md
 
 ### 📋 Customization Target
 
-- **Create**: Create new with `/kiro:steering-custom` command
+- **Create**: Create new with `/yy:steering-custom` command
 - **Save to**: `{{KIRO_DIR}}/steering/{{domain-name}}.md`
 - **Rules adjustment**: `{{KIRO_DIR}}/settings/rules/steering-principles.md` (Optional)
 
@@ -1070,7 +1070,7 @@ grep -A 10 "## Security" {{KIRO_DIR}}/specs/user-api/design.md
 
 #### Step 1: Create Steering Document
 
-**Command**: `/kiro:steering-custom`
+**Command**: `/yy:steering-custom`
 
 **Prompt Example**:
 ```
@@ -1986,31 +1986,31 @@ class ErrorBoundary extends React.Component {
 When you create a steering document:
 
 1. **All spec generation commands** automatically reference the rules
-2. `/kiro:spec-design` automatically applies standard format during API design
-3. `/kiro:spec-requirements` automatically includes error handling requirements
-4. `/kiro:spec-tasks` generates authentication and testing-related tasks according to standards
+2. `/yy:spec-design` automatically applies standard format during API design
+3. `/yy:spec-requirements` automatically includes error handling requirements
+4. `/yy:spec-tasks` generates authentication and testing-related tasks according to standards
 
 ### 🧪 Testing Method
 
 ```bash
 # 1. Create steering document
-/kiro:steering-custom
+/yy:steering-custom
 # Prompt: Create API standards steering document for REST conventions
 
 # 2. Check generated file
 cat {{KIRO_DIR}}/steering/api-standards.md
 
 # 3. Check steering application with new spec
-/kiro:spec-init Build user management API
-/kiro:spec-design user-management-api
+/yy:spec-init Build user management API
+/yy:spec-design user-management-api
 
 # 4. Check if API standards are reflected in generated design.md
 grep -A 10 "## API Specification" {{KIRO_DIR}}/specs/user-management-api/design.md
 # Verify endpoint structure and error response format match steering
 
 # 5. Verify same standards are applied to other features
-/kiro:spec-init Build order processing API
-/kiro:spec-design order-processing-api
+/yy:spec-init Build order processing API
+/yy:spec-design order-processing-api
 diff \
   <(grep "Error Response" {{KIRO_DIR}}/specs/user-management-api/design.md) \
   <(grep "Error Response" {{KIRO_DIR}}/specs/order-processing-api/design.md)
@@ -2089,10 +2089,10 @@ git commit -m "Add team-wide templates"
 
 ```bash
 # 1. Try with a small feature
-/kiro:spec-init Small feature for testing custom templates
-/kiro:spec-requirements test-feature
-/kiro:spec-design test-feature
-/kiro:spec-tasks test-feature
+/yy:spec-init Small feature for testing custom templates
+/yy:spec-requirements test-feature
+/yy:spec-design test-feature
+/yy:spec-tasks test-feature
 
 # 2. Team review
 # - Check output quality

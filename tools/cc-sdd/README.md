@@ -5,7 +5,7 @@
 [![license: MIT](https://img.shields.io/badge/license-MIT-green.svg)](../../LICENSE)
 
 <div align="center" style="margin-bottom: 1rem; font-size: 1.1rem;"><sub>
-English | <a href="./README_ja.md">日本語</a> | <a href="./README_zh-TW.md">繁體中文</a>
+English | <a href="./README_zh.md">简体中文</a>
 </sub></div>
 
 ✨ **Transform Claude Code / Cursor IDE / Gemini CLI / Codex CLI / GitHub Copilot / Qwen Code / OpenCode / Windsurf from prototype to production-ready development.**
@@ -22,7 +22,7 @@ English | <a href="./README_ja.md">日本語</a> | <a href="./README_zh-TW.md">�
 ---
 
 > Need the legacy flow? Use `npx cc-sdd@1.1.5`. Upgrading from v1.x?
-> See the Migration Guide: [English](../../docs/guides/migration-guide.md) | [日本語](../../docs/guides/ja/migration-guide.md).
+> See the Migration Guide: [English](../../docs/guides/migration-guide.md) | [简体中文](../../docs/guides/zh/migration-guide.md).
 
 ## 🚀 Installation
 
@@ -33,22 +33,21 @@ Run one command to install **AI-DLC** (AI Driven Development Lifecycle) with **S
 npx cc-sdd@latest
 
 # With language options (default: --lang en)
-npx cc-sdd@latest --lang ja    # Japanese
-npx cc-sdd@latest --lang zh-TW # Traditional Chinese
+npx cc-sdd@latest --lang zh    # Simplified Chinese
 npx cc-sdd@latest --lang es    # Spanish
 ... (en, ja, zh-TW, zh, es, pt, de, fr, ru, it, ko, ar, el supported)
 
 # With agent options (default: claude-code / --claude)
-npx cc-sdd@latest --claude        # Claude Code (11 commands, en/ja/zh-TW/...)
-npx cc-sdd@latest --claude-agent --lang ja  # Claude Code Subagents (12 commands + 9 subagents)
-npx cc-sdd@latest --cursor --lang zh-TW     # Cursor IDE (choose any supported lang)
+npx cc-sdd@latest --claude        # Claude Code (6 workflow commands, en/zh/...)
+npx cc-sdd@latest --claude-agent --lang zh  # Claude Code Agents (6 commands + 9 subagents)
+npx cc-sdd@latest --cursor --lang es        # Cursor IDE (choose any supported lang)
 npx cc-sdd@latest --gemini --lang es        # Gemini CLI
 npx cc-sdd@latest --codex --lang fr         # Codex CLI
 npx cc-sdd@latest --copilot --lang pt       # GitHub Copilot
 npx cc-sdd@latest --qwen --lang de          # Qwen Code
 npx cc-sdd@latest --opencode --lang en      # OpenCode (11 commands)
-npx cc-sdd@latest --opencode-agent --lang ja # OpenCode Subagents (12 commands + 9 subagents)
-npx cc-sdd@latest --windsurf --lang ja      # Windsurf IDE
+npx cc-sdd@latest --opencode-agent --lang zh # OpenCode Subagents (12 commands + 9 subagents)
+npx cc-sdd@latest --windsurf --lang zh      # Windsurf IDE
 
 # Note: @next is now reserved for future alpha/beta versions
 ```
@@ -75,31 +74,43 @@ npx cc-sdd@latest --windsurf --lang ja      # Windsurf IDE
 
 ## ✨ Quick Start
 
-### For New Projects
+### For Claude Code (`--claude` / `--claude-agent`)
 ```bash
-# Launch AI agent and start spec-driven development immediately
-/kiro:spec-init Build a user authentication system with OAuth  # AI creates structured plan
-/kiro:spec-requirements auth-system                            # AI asks clarifying questions
-/kiro:spec-design auth-system                                  # Human validates, AI designs
-/kiro:spec-tasks auth-system                                   # Break into implementation tasks
-/kiro:spec-impl auth-system                                    # Execute with TDD
+# Establish project context first (essential for existing projects)
+/yy:steering                                                   # AI learns project context
+
+# Then use self-contained workflow commands
+/yy:feature Build a user authentication system with OAuth      # Auto-sizes → small: implement / large: plan
+/yy:fix Login fails when email has uppercase letters            # TDD fix → code review → update specs
+/yy:investigate Why are sessions expiring early                 # Systematic diagnosis → conclusion → can fix
+/yy:plan-exec auth-system                                      # Execute a large feature plan
+/yy:status auth-system                                         # Check spec progress
 ```
 
 ![design.md - System Flow Diagram](https://raw.githubusercontent.com/gotalab/cc-sdd/refs/heads/main/assets/design-system_flow.png)
 *Example of system flow during the design phase `design.md`*
 
-### For Existing Projects (Recommended)
-```bash
-# First establish project context, then proceed with development
-/kiro:steering                                                 # AI learns existing project context
+### For Other Agents (Cursor, Gemini, Codex, Copilot, etc.)
 
-/kiro:spec-init Add OAuth to existing auth system              # AI creates enhancement plan
-/kiro:spec-requirements oauth-enhancement                      # AI asks clarifying questions
-/kiro:validate-gap oauth-enhancement                           # Optional: Analyze existing vs requirements
-/kiro:spec-design oauth-enhancement                            # Human validates, AI designs
-/kiro:validate-design oauth-enhancement                        # Optional: Validate design integration  
-/kiro:spec-tasks oauth-enhancement                             # Break into implementation tasks
-/kiro:spec-impl oauth-enhancement                              # Execute with TDD
+> Command separator varies by agent — see table below or check your agent's installed commands.
+
+| Agent | Separator | Example |
+|-------|-----------|---------|
+| Gemini, Qwen | `/yy:` | `/yy:steering` |
+| Cursor | `/yy/` | `/yy/steering` |
+| Copilot, Windsurf, OpenCode | `/yy-` | `/yy-steering` |
+| Codex | `/prompts:yy-` | `/prompts:yy-steering` |
+
+```bash
+# Workflow (shown with Gemini/Qwen syntax — adapt separator for your agent)
+/yy:steering                                                   # AI learns existing project context
+/yy:spec-init Add OAuth to existing auth system                # AI creates enhancement plan
+/yy:spec-requirements oauth-enhancement                        # AI asks clarifying questions
+/yy:validate-gap oauth-enhancement                             # Optional: Analyze existing vs requirements
+/yy:spec-design oauth-enhancement                              # Human validates, AI designs
+/yy:validate-design oauth-enhancement                          # Optional: Validate design integration
+/yy:spec-tasks oauth-enhancement                               # Break into implementation tasks
+/yy:spec-impl oauth-enhancement                                # Execute with TDD
 ```
 
 **30-second setup** → **AI-driven "bolts" (not sprints)** → **Hours-to-delivery results**
@@ -124,8 +135,8 @@ npx cc-sdd@latest --windsurf --lang ja      # Windsurf IDE
 
 | Agent | Status | Commands |
 |-------|--------|----------|
-| **Claude Code** | ✅ Full | 11 slash commands |
-| **Claude Code Subagents** | ✅ Full | 12 commands + 9 subagents |
+| **Claude Code** | ✅ Full | 13 commands (`/yy:*`): 6 auto-workflow + 7 step-by-step |
+| **Claude Code Agents** | ✅ Full | 13 commands (`/yy:*`) + 9 subagents |
 | **Cursor IDE** | ✅ Full | 11 commands |
 | **Gemini CLI** | ✅ Full | 11 commands |
 | **Codex CLI** | ✅ Full | 11 prompts |
@@ -136,40 +147,53 @@ npx cc-sdd@latest --windsurf --lang ja      # Windsurf IDE
  
 ## 📋 Commands
 
-### Spec-Driven Development Workflow (Specs Methodology)
+### Claude Code Workflow (`/yy:*`)
+
+**Auto Workflow** (end-to-end, self-closing):
 ```bash
-/kiro:spec-init <description>             # Initialize feature spec
-/kiro:spec-requirements <feature_name>    # Generate requirements
-/kiro:spec-design <feature_name>          # Create technical design  
-/kiro:spec-tasks <feature_name>           # Break into implementation tasks
-/kiro:spec-impl <feature_name> <tasks>    # Execute with TDD
-/kiro:spec-status <feature_name>          # Check progress
+/yy:steering                              # Create/update project context (run first)
+/yy:feature <description>                 # New feature → auto-size → implement or plan
+/yy:fix <description>                     # Known bug → TDD fix → code review
+/yy:investigate <description>             # Uncertain issue → systematic diagnosis
+/yy:plan-exec [spec-name]                 # Execute a large feature plan
+/yy:status [spec-name]                    # Check spec progress
+```
+
+**Step-by-Step Workflow** (manual control per phase):
+```bash
+/yy:spec-requirements <feature_name>      # Generate requirements
+/yy:spec-design <feature_name>            # Create technical design
+/yy:spec-tasks <feature_name>             # Break into implementation tasks
+/yy:spec-impl <feature_name> <tasks>      # Execute with TDD
+/yy:validate-gap <feature_name>           # Analyze existing functionality gaps
+/yy:validate-design <feature_name>        # Review design compatibility
+/yy:validate-impl <feature_name>          # Validate implementation against specs
+```
+
+### Other Agents Workflow (`/yy:*`)
+```bash
+/yy:spec-init <description>              # Initialize feature spec
+/yy:spec-requirements <feature_name>     # Generate requirements
+/yy:spec-design <feature_name>           # Create technical design
+/yy:spec-tasks <feature_name>            # Break into implementation tasks
+/yy:spec-impl <feature_name> <tasks>     # Execute with TDD
+/yy:spec-status <feature_name>           # Check progress
+/yy:validate-gap <feature_name>          # Analyze existing functionality gaps
+/yy:validate-design <feature_name>       # Review design compatibility
+/yy:validate-impl <feature_name>         # Validate implementation against specs
 ```
 
 > **Specifications as the Foundation**: Based on [Kiro's specs](https://kiro.dev/docs/specs/) - specs transform ad-hoc development into systematic workflows, bridging ideas to implementation with clear AI-human collaboration points.
 
-> **Kiro IDE Integration**: Specs are portable to [Kiro IDE](https://kiro.dev) for enhanced implementation with guardrails and team collaboration features.
-
 📖 **[Complete Command Reference](https://github.com/gotalab/cc-sdd/blob/main/docs/guides/command-reference.md)** - Detailed usage, parameters, examples, and troubleshooting for all commands
 
-### Quality Validation (Optional - Brownfield Development)
+### Project Memory & Context
 ```bash
-# Before spec-design (analyze existing functionality vs requirements):
-/kiro:validate-gap <feature_name>         # Analyze existing functionality and identify gaps with requirements
-
-# After spec-design (validate design against existing system):
-/kiro:validate-design <feature_name>      # Review design compatibility with existing architecture
+/yy:steering                              # Claude Code
+/yy:steering                              # Other agents
 ```
 
-> **Optional for Brownfield Development**: `validate-gap` analyzes existing vs required functionality; `validate-design` checks integration compatibility. Both are optional quality gates for existing systems.
-
-### Project Memory & Context (Essential)
-```bash
-/kiro:steering                            # Create/update project memory and context
-/kiro:steering-custom                     # Add specialized domain knowledge
-```
-
-> **Critical Foundation Commands**: Steering creates persistent project memory - context, rules, and architecture that AI uses across all sessions. **Run first for existing projects** to dramatically improve spec quality.
+> **Critical Foundation**: Steering creates persistent project memory. **Run first for existing projects** to improve spec quality.
 
 ## 🎨 Customization
 
@@ -189,8 +213,8 @@ Edit templates in `{{KIRO_DIR}}/settings/templates/` to match your workflow. Kee
 
 ```bash
 # Language and platform
-npx cc-sdd@latest --lang ja            # macOS / Linux / Windows (auto-detected)
-npx cc-sdd@latest --lang ja --os mac   # Optional explicit override (legacy flag)
+npx cc-sdd@latest --lang zh            # macOS / Linux / Windows (auto-detected)
+npx cc-sdd@latest --lang zh --os mac   # Optional explicit override (legacy flag)
 
 # Safe operations  
 npx cc-sdd@latest --dry-run --backup
@@ -205,7 +229,7 @@ After installation, your project gets:
 
 ```
 project/
-├── .claude/commands/kiro/    # 11 slash commands
+├── .claude/commands/yy/      # 6 workflow commands (Claude Code)
 ├── .codex/prompts/           # 11 prompt commands (Codex CLI)
 ├── .github/prompts/          # 11 prompt commands (GitHub Copilot)
 ├── .windsurf/workflows/      # 11 workflow files (Windsurf IDE)
@@ -219,11 +243,11 @@ project/
 
 ## 📚 Documentation & Support
 
-- Command Reference: [English](../../docs/guides/command-reference.md) | [日本語](../../docs/guides/ja/command-reference.md)
-- Customization Guide: [English](../../docs/guides/customization-guide.md) | [日本語](../../docs/guides/ja/customization-guide.md)
-- Spec-Driven Guide: [English](../../docs/guides/spec-driven.md) | [日本語](../../docs/guides/ja/spec-driven.md)
-- Claude Subagents Guide: [English](../../docs/guides/claude-subagents.md) | [日本語](../../docs/guides/ja/claude-subagents.md)
-- Migration Guide: [English](../../docs/guides/migration-guide.md) | [日本語](../../docs/guides/ja/migration-guide.md)
+- Command Reference: [English](../../docs/guides/command-reference.md) | [简体中文](../../docs/guides/zh/command-reference.md)
+- Customization Guide: [English](../../docs/guides/customization-guide.md) | [简体中文](../../docs/guides/zh/customization-guide.md)
+- Spec-Driven Guide: [English](../../docs/guides/spec-driven.md) | [简体中文](../../docs/guides/zh/spec-driven.md)
+- Claude Subagents Guide: [English](../../docs/guides/claude-subagents.md) | [简体中文](../../docs/guides/zh/claude-subagents.md)
+- Migration Guide: [English](../../docs/guides/migration-guide.md) | [简体中文](../../docs/guides/zh/migration-guide.md)
 - **[Issues & Support](https://github.com/gotalab/cc-sdd/issues)** - Bug reports and questions
 - **[Kiro IDE](https://kiro.dev)**
 

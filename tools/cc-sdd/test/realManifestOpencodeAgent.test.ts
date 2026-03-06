@@ -55,8 +55,11 @@ describe('real opencode-agent manifest', () => {
     const text = await readFile(doc, 'utf8');
     expect(text).toMatch(/# AI-DLC and Spec-Driven Development/);
 
-    const cmd = join(cwd, '.opencode/commands/kiro-spec-init.md');
+    const cmd = join(cwd, '.opencode/commands/yy-spec-init.md');
     expect(await exists(cmd)).toBe(true);
+
+    const quickCmd = join(cwd, '.opencode/commands/yy-spec-quick.md');
+    expect(await exists(quickCmd)).toBe(true);
 
     const agentSpecImpl = join(cwd, '.opencode/agents/kiro/spec-impl.md');
     expect(await exists(agentSpecImpl)).toBe(true);

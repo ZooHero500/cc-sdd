@@ -147,7 +147,7 @@ describe('template renderer edge cases', () => {
       expect(result.manifest.config.lang).toBe('ja');
       expect(result.manifest.config.paths.kiro).toBe('custom-kiro');
       expect(result.manifest.config.paths.agent).toBe('.gemini');
-      expect(result.manifest.config.paths.commands).toBe('.gemini/commands/kiro');
+      expect(result.manifest.config.paths.commands).toBe('.gemini/commands/yy');
     });
   });
 });

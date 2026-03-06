@@ -44,7 +44,7 @@ describe('manifest planner glue', () => {
     expect(plan).toHaveLength(2);
     const staticDir = plan.find((p) => p.id === 'commands_static_all') as any;
     expect(staticDir.source.from).toBe('templates/agents/claude-code/commands');
-    expect(staticDir.source.toDir).toBe('.claude/commands/kiro');
+    expect(staticDir.source.toDir).toBe('.claude/commands/yy');
     const doc = plan.find((p) => p.id === 'doc_tpl') as any;
     expect(doc.source.toDir).toBe('.claude');
     expect(doc.source.outFile).toBe('CLAUDE.md');

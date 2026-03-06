@@ -34,7 +34,7 @@ describe('real gemini-cli manifest (mac)', () => {
     expect(code).toBe(0);
     const out = ctx.logs.join('\n');
     expect(out).toMatch(/Plan \(dry-run\)/);
-    expect(out).toContain('[templateDir] commands: templates/agents/gemini-cli/commands -> .gemini/commands/kiro');
+    expect(out).toContain('[templateDir] commands: templates/agents/gemini-cli/commands -> .gemini/commands/yy');
     expect(out).toContain('[templateFile] doc_main: templates/agents/gemini-cli/docs/GEMINI.md -> ./GEMINI.md');
     expect(out).toContain('[templateDir] settings_common: templates/shared/settings -> .kiro/settings');
   });
@@ -50,7 +50,7 @@ describe('real gemini-cli manifest (mac)', () => {
     const text = await readFile(doc, 'utf8');
     expect(text).toMatch(/# AI-DLC and Spec-Driven Development/);
 
-    const cmd = join(cwd, '.gemini/commands/kiro/spec-init.toml');
+    const cmd = join(cwd, '.gemini/commands/yy/spec-init.toml');
     expect(await exists(cmd)).toBe(true);
 
     const settingsRule = join(cwd, '.kiro/settings/rules/design-principles.md');
@@ -69,7 +69,7 @@ describe('real gemini-cli manifest (linux)', () => {
     expect(code).toBe(0);
     const out = ctx.logs.join('\n');
     expect(out).toMatch(/Plan \(dry-run\)/);
-    expect(out).toContain('[templateDir] commands: templates/agents/gemini-cli/commands -> .gemini/commands/kiro');
+    expect(out).toContain('[templateDir] commands: templates/agents/gemini-cli/commands -> .gemini/commands/yy');
     expect(out).toContain('[templateFile] doc_main: templates/agents/gemini-cli/docs/GEMINI.md -> ./GEMINI.md');
     expect(out).toContain('[templateDir] settings_common: templates/shared/settings -> .kiro/settings');
   });
@@ -85,7 +85,7 @@ describe('real gemini-cli manifest (linux)', () => {
     const text = await readFile(doc, 'utf8');
     expect(text).toMatch(/# AI-DLC and Spec-Driven Development/);
 
-    const cmd = join(cwd, '.gemini/commands/kiro/spec-init.toml');
+    const cmd = join(cwd, '.gemini/commands/yy/spec-init.toml');
     expect(await exists(cmd)).toBe(true);
 
     const settingsTemplate = join(cwd, '.kiro/settings/templates/specs/init.json');

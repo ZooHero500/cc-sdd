@@ -39,18 +39,18 @@ export const agentDefinitions = {
   'claude-code': {
     label: 'Claude Code',
     description:
-      'Installs kiro prompts in `.claude/commands/kiro/`, shared settings in `{{KIRO_DIR}}/settings/` (default `.kiro/settings/`), and an AGENTS.md quickstart.',
+      'Installs yy workflow commands in `.claude/commands/yy/`, shared settings in `{{KIRO_DIR}}/settings/` (default `.kiro/settings/`), and a CLAUDE.md quickstart.',
     aliasFlags: ['--claude-code', '--claude'],
     recommendedModels: ['Claude Opus 4.5 or newer'],
     layout: {
-      commandsDir: '.claude/commands/kiro',
+      commandsDir: '.claude/commands/yy',
       agentDir: '.claude',
       docFile: 'CLAUDE.md',
     },
     commands: {
-      spec: '`/kiro:spec-init <what-to-build>`',
-      steering: '`/kiro:steering`',
-      steeringCustom: '`/kiro:steering-custom <what-to-create-custom-steering-document>`',
+      spec: '`/yy:feature <description>`',
+      steering: '`/yy:steering`',
+      steeringCustom: '',
     },
     templateFallbacks: {
       'CLAUDE.md': '../../CLAUDE.md',
@@ -60,18 +60,18 @@ export const agentDefinitions = {
   'claude-code-agent': {
     label: 'Claude Code Agents',
     description:
-      'Installs kiro prompts in `.claude/commands/kiro/`, a Claude agent library in `.claude/agents/kiro/`, shared settings in `{{KIRO_DIR}}/settings/`, and a CLAUDE.md quickstart.',
+      'Installs yy workflow commands in `.claude/commands/yy/`, a Claude agent library in `.claude/agents/kiro/`, shared settings in `{{KIRO_DIR}}/settings/`, and a CLAUDE.md quickstart.',
     aliasFlags: ['--claude-code-agent', '--claude-agent'],
     recommendedModels: ['Claude Opus 4.5 or newer'],
     layout: {
-      commandsDir: '.claude/commands/kiro',
+      commandsDir: '.claude/commands/yy',
       agentDir: '.claude',
       docFile: 'CLAUDE.md',
     },
     commands: {
-      spec: '`/kiro:spec-quick <what-to-build>`',
-      steering: '`/kiro:steering`',
-      steeringCustom: '`/kiro:steering-custom <what-to-create-custom-steering-document>`',
+      spec: '`/yy:feature <description>`',
+      steering: '`/yy:steering`',
+      steeringCustom: '',
     },
     templateFallbacks: {
       'CLAUDE.md': '../../CLAUDE.md',
@@ -81,7 +81,7 @@ export const agentDefinitions = {
   codex: {
     label: 'Codex CLI',
     description:
-      'Installs kiro prompts in `.codex/prompts/`, shared settings in `{{KIRO_DIR}}/settings/`, and an AGENTS.md quickstart.',
+      'Installs yy prompts in `.codex/prompts/`, shared settings in `{{KIRO_DIR}}/settings/`, and an AGENTS.md quickstart.',
     aliasFlags: ['--codex', '--codex-cli'],
     recommendedModels: ['gpt-5.2-codex', 'gpt-5.2'],
     layout: {
@@ -90,9 +90,9 @@ export const agentDefinitions = {
       docFile: 'AGENTS.md',
     },
     commands: {
-      spec: '`/prompts:kiro-spec-init <what-to-build>`',
-      steering: '`/prompts:kiro-steering`',
-      steeringCustom: '`/prompts:kiro-steering-custom <what-to-create-custom-steering-document>`',
+      spec: '`/prompts:yy-spec-init <what-to-build>`',
+      steering: '`/prompts:yy-steering`',
+      steeringCustom: '`/prompts:yy-steering-custom <what-to-create-custom-steering-document>`',
     },
     completionGuide: {
       prependSteps: [codexCopyInstruction],
@@ -102,25 +102,25 @@ export const agentDefinitions = {
   cursor: {
     label: 'Cursor IDE',
     description:
-      'Installs kiro prompts in `.cursor/commands/kiro/`, shared settings in `{{KIRO_DIR}}/settings/`, and an AGENTS.md quickstart.',
+      'Installs yy prompts in `.cursor/commands/yy/`, shared settings in `{{KIRO_DIR}}/settings/`, and an AGENTS.md quickstart.',
     aliasFlags: ['--cursor'],
     recommendedModels: ['Claude Opus 4.5 or newer', 'gpt-5.2-codex', 'gpt-5.2'],
     layout: {
-      commandsDir: '.cursor/commands/kiro',
+      commandsDir: '.cursor/commands/yy',
       agentDir: '.cursor',
       docFile: 'AGENTS.md',
     },
     commands: {
-      spec: '`/kiro/spec-init <what-to-build>`',
-      steering: '`/kiro/steering`',
-      steeringCustom: '`/kiro/steering-custom <what-to-create-custom-steering-document>`',
+      spec: '`/yy/spec-init <what-to-build>`',
+      steering: '`/yy/steering`',
+      steeringCustom: '`/yy/steering-custom <what-to-create-custom-steering-document>`',
     },
     manifestId: 'cursor',
   },
   'github-copilot': {
     label: 'GitHub Copilot',
     description:
-      'Installs kiro prompts in `.github/prompts/`, shared settings in `{{KIRO_DIR}}/settings/`, and an AGENTS.md quickstart.',
+      'Installs yy prompts in `.github/prompts/`, shared settings in `{{KIRO_DIR}}/settings/`, and an AGENTS.md quickstart.',
     aliasFlags: ['--copilot', '--github-copilot'],
     recommendedModels: ['Claude Opus 4.5 or newer', 'gpt-5.2-codex', 'gpt-5.2'],
     layout: {
@@ -129,34 +129,34 @@ export const agentDefinitions = {
       docFile: 'AGENTS.md',
     },
     commands: {
-      spec: '`/kiro-spec-init <what-to-build>`',
-      steering: '`/kiro-steering`',
-      steeringCustom: '`/kiro-steering-custom <what-to-create-custom-steering-document>`',
+      spec: '`/yy-spec-init <what-to-build>`',
+      steering: '`/yy-steering`',
+      steeringCustom: '`/yy-steering-custom <what-to-create-custom-steering-document>`',
     },
     manifestId: 'github-copilot',
   },
   'gemini-cli': {
     label: 'Gemini CLI',
     description:
-      'Installs kiro prompts in `.gemini/commands/kiro/`, shared settings in `{{KIRO_DIR}}/settings/`, and an AGENTS.md quickstart.',
+      'Installs yy prompts in `.gemini/commands/yy/`, shared settings in `{{KIRO_DIR}}/settings/`, and a GEMINI.md quickstart.',
     aliasFlags: ['--gemini-cli', '--gemini'],
     recommendedModels: ['Gemini 3 Flash or newer'],
     layout: {
-      commandsDir: '.gemini/commands/kiro',
+      commandsDir: '.gemini/commands/yy',
       agentDir: '.gemini',
       docFile: 'GEMINI.md',
     },
     commands: {
-      spec: '`/kiro:spec-init <what-to-build>`',
-      steering: '`/kiro:steering`',
-      steeringCustom: '`/kiro:steering-custom <what-to-create-custom-steering-document>`',
+      spec: '`/yy:spec-init <what-to-build>`',
+      steering: '`/yy:steering`',
+      steeringCustom: '`/yy:steering-custom <what-to-create-custom-steering-document>`',
     },
     manifestId: 'gemini-cli',
   },
   windsurf: {
     label: 'Windsurf IDE',
     description:
-      'Installs kiro workflows in `.windsurf/workflows/`, shared settings in `{{KIRO_DIR}}/settings/`, and an AGENTS.md quickstart.',
+      'Installs yy workflows in `.windsurf/workflows/`, shared settings in `{{KIRO_DIR}}/settings/`, and an AGENTS.md quickstart.',
     aliasFlags: ['--windsurf'],
     recommendedModels: ['Claude Opus 4.5 or newer', 'gpt-5.2-codex', 'gpt-5.2'],
     layout: {
@@ -165,33 +165,33 @@ export const agentDefinitions = {
       docFile: 'AGENTS.md',
     },
     commands: {
-      spec: '`/kiro-spec-init <what-to-build>`',
-      steering: '`/kiro-steering`',
-      steeringCustom: '`/kiro-steering-custom <what-to-create-custom-steering-document>`',
+      spec: '`/yy-spec-init <what-to-build>`',
+      steering: '`/yy-steering`',
+      steeringCustom: '`/yy-steering-custom <what-to-create-custom-steering-document>`',
     },
     manifestId: 'windsurf',
   },
   'qwen-code': {
     label: 'Qwen Code',
     description:
-      'Installs kiro prompts in `.qwen/commands/kiro/`, shared settings in `{{KIRO_DIR}}/settings/`, and an AGENTS.md quickstart.',
+      'Installs yy prompts in `.qwen/commands/yy/`, shared settings in `{{KIRO_DIR}}/settings/`, and a QWEN.md quickstart.',
     aliasFlags: ['--qwen-code', '--qwen'],
     layout: {
-      commandsDir: '.qwen/commands/kiro',
+      commandsDir: '.qwen/commands/yy',
       agentDir: '.qwen',
       docFile: 'QWEN.md',
     },
     commands: {
-      spec: '`/kiro:spec-init <what-to-build>`',
-      steering: '`/kiro:steering`',
-      steeringCustom: '`/kiro:steering-custom`',
+      spec: '`/yy:spec-init <what-to-build>`',
+      steering: '`/yy:steering`',
+      steeringCustom: '`/yy:steering-custom`',
     },
     manifestId: 'qwen-code',
   },
   'opencode': {
     label: 'OpenCode',
     description:
-      'Installs kiro prompts in `.opencode/commands/`, shared settings in `{{KIRO_DIR}}/settings/`, and an AGENTS.md quickstart.',
+      'Installs yy prompts in `.opencode/commands/`, shared settings in `{{KIRO_DIR}}/settings/`, and an AGENTS.md quickstart.',
     aliasFlags: ['--opencode'],
     recommendedModels: ['gpt-5.2-codex', 'gpt-5.2'],
     layout: {
@@ -200,16 +200,16 @@ export const agentDefinitions = {
       docFile: 'AGENTS.md',
     },
     commands: {
-      spec: '`/kiro-spec-init <what-to-build>`',
-      steering: '`/kiro-steering`',
-      steeringCustom: '`/kiro-steering-custom <what-to-create-custom-steering-document>`',
+      spec: '`/yy-spec-init <what-to-build>`',
+      steering: '`/yy-steering`',
+      steeringCustom: '`/yy-steering-custom <what-to-create-custom-steering-document>`',
     },
     manifestId: 'opencode',
   },
   'opencode-agent': {
     label: 'OpenCode Agents',
     description:
-      'Installs kiro commands in `.opencode/commands/`, a kiro agent library in `.opencode/agents/`, shared settings in `{{KIRO_DIR}}/settings/`, and an AGENTS.md quickstart.',
+      'Installs yy commands in `.opencode/commands/`, a yy agent library in `.opencode/agents/kiro/`, shared settings in `{{KIRO_DIR}}/settings/`, and an AGENTS.md quickstart.',
     aliasFlags: ['--opencode-agent'],
     recommendedModels: ['gpt-5.2-codex', 'gpt-5.2'],
     layout: {
@@ -218,9 +218,9 @@ export const agentDefinitions = {
       docFile: 'AGENTS.md',
     },
     commands: {
-      spec: '`/kiro-spec-quick <what-to-build>`',
-      steering: '`/kiro-steering`',
-      steeringCustom: '`/kiro-steering-custom <what-to-create-custom-steering-document>`',
+      spec: '`/yy-spec-quick <what-to-build>`',
+      steering: '`/yy-steering`',
+      steeringCustom: '`/yy-steering-custom <what-to-create-custom-steering-document>`',
     },
     templateFallbacks: {
       'AGENTS.md': '../../AGENTS.md',

@@ -21,14 +21,14 @@ describe('buildTemplateContext', () => {
     const ctx = buildTemplateContext({ agent: 'claude-code', lang: 'en' });
     expect(ctx.AGENT_DIR).toBe('.claude');
     expect(ctx.AGENT_DOC).toBe('CLAUDE.md');
-    expect(ctx.AGENT_COMMANDS_DIR).toBe('.claude/commands/kiro');
+    expect(ctx.AGENT_COMMANDS_DIR).toBe('.claude/commands/yy');
   });
 
   it('includes agent layout variables for claude-code-agent', () => {
     const ctx = buildTemplateContext({ agent: 'claude-code-agent', lang: 'en' });
     expect(ctx.AGENT_DIR).toBe('.claude');
     expect(ctx.AGENT_DOC).toBe('CLAUDE.md');
-    expect(ctx.AGENT_COMMANDS_DIR).toBe('.claude/commands/kiro');
+    expect(ctx.AGENT_COMMANDS_DIR).toBe('.claude/commands/yy');
   });
 
   it('respects agentLayouts override', () => {

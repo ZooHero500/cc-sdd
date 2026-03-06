@@ -6,7 +6,7 @@
 [![license: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
 
 <div align="center" style="font-size: 1.1rem; margin-bottom: 1rem;"><sub>
-<a href="./tools/cc-sdd/README.md">English</a> | <a href="./tools/cc-sdd/README_ja.md">日本語</a> | <a href="./tools/cc-sdd/README_zh-TW.md">繁體中文</a>
+<a href="./tools/cc-sdd/README.md">English</a> | <a href="./tools/cc-sdd/README_zh.md">简体中文</a>
 </sub></div>
 
 ## Transform AI coding agents into production-ready spec-driven development
@@ -32,7 +32,7 @@ Stop losing 70% of development time to meetings, documentation ceremonies, and s
 cd your-project
 npx cc-sdd@latest --claude --lang en ## Claude Code
 
-# ✅ That's it! Now run: /kiro:spec-init <what-to-build>
+# ✅ That's it! Now run: /yy:feature <what-to-build>
 ```
 
 **Installation takes 30 seconds.** Supports 8 agents (Claude (Commands / Subagents), Cursor, Gemini, Codex, Copilot, Qwen, OpenCode, Windsurf) × 13 languages.
@@ -44,10 +44,8 @@ npx cc-sdd@latest --claude --lang en ## Claude Code
 ### Example: Building a new Photo Albums Feature
 
 ```bash
-/kiro:spec-init Photo albums with upload, tagging, and sharing
-/kiro:spec-requirements photo-albums-en
-/kiro:spec-design photo-albums-en -y
-/kiro:spec-tasks photo-albums-en -y
+/yy:steering                                                   # Establish project context (first time)
+/yy:feature Photo albums with upload, tagging, and sharing     # Auto-size → implement or plan
 ```
 
 **Generated in 10 minutes:**
@@ -63,8 +61,8 @@ Want to inspect a complex, large-scale requirements set? Jump to the advanced [c
 
 | Scenario | Workflow |
 |----------|----------|
-| **New feature (greenfield)** | `spec-init` → `spec-requirements` → `spec-design` → `spec-tasks` → `spec-impl` |
-| **Enhance existing code (brownfield)** | `steering` → `spec-init` → (`validate-gap` →) `spec-design` → (`validate-design` →) `spec-tasks` → `spec-impl` |
+| **New feature (greenfield)** | `steering` → `feature` → auto-size → implement or plan |
+| **Enhance existing code (brownfield)** | `steering` → `feature` → (`validate-gap` →) `spec-design` → (`validate-design` →) `spec-tasks` → `spec-impl` |
 | **Team process alignment** | Customize templates once in `.kiro/settings/templates/` → all agents follow same format |
 
 ## 🎨 Customization
@@ -83,8 +81,8 @@ Common use cases: PRD-style requirements, API/database schemas, approval gates, 
 ### Choose Your Agent
 
 ```bash
-npx cc-sdd@latest --claude         # Claude Code (11 commands) [default]
-npx cc-sdd@latest --claude-agent   # Claude Code Subagents (12 commands + 9 subagents)
+npx cc-sdd@latest --claude         # Claude Code (13 commands) [default]
+npx cc-sdd@latest --claude-agent   # Claude Code Subagents (13 commands + 9 subagents)
 npx cc-sdd@latest --cursor         # Cursor IDE
 npx cc-sdd@latest --gemini         # Gemini CLI
 npx cc-sdd@latest --codex          # Codex CLI
@@ -98,8 +96,7 @@ npx cc-sdd@latest --windsurf       # Windsurf IDE
 ### Choose Your Language
 
 ```bash
-npx cc-sdd@latest --lang ja        # Japanese
-npx cc-sdd@latest --lang zh-TW     # Traditional Chinese
+npx cc-sdd@latest --lang zh        # Simplified Chinese
 npx cc-sdd@latest --lang es        # Spanish
 # Supports: en, ja, zh-TW, zh, es, pt, de, fr, ru, it, ko, ar, el
 ```
@@ -118,20 +115,19 @@ npx cc-sdd@latest --kiro-dir docs
 
 ## 📚 Documentation & Support
 
-### 📖 Complete Guides (English | 日本語)
+### 📖 Complete Guides (English | 简体中文)
 
 | Guide | What You'll Learn | Links |
 |-------|-------------------|-------|
-| **Command Reference** | All 11 `/kiro:*` commands with detailed usage, parameters, and examples | [English](docs/guides/command-reference.md) \| [日本語](docs/guides/ja/command-reference.md) |
-| **Customization Guide** | 7 practical examples: PRD requirements, frontend/backend designs, JIRA integration | [English](docs/guides/customization-guide.md) \| [日本語](docs/guides/ja/customization-guide.md) |
-| **Spec-Driven Guide** | Complete workflow methodology from requirements to implementation | [English](docs/guides/spec-driven.md) \| [日本語](docs/guides/ja/spec-driven.md) |
-| **Claude Subagents** | Advanced: Using 9 specialized subagents for complex projects | [English](docs/guides/claude-subagents.md) \| [日本語](docs/guides/ja/claude-subagents.md) |
-| **Migration Guide** | Upgrading from v1.x to v2.0.0 | [English](docs/guides/migration-guide.md) \| [日本語](docs/guides/ja/migration-guide.md) |
+| **Command Reference** | All 13 `/yy:*` commands with detailed usage, parameters, and examples | [English](docs/guides/command-reference.md) \| [简体中文](docs/guides/zh/command-reference.md) |
+| **Customization Guide** | 7 practical examples: PRD requirements, frontend/backend designs, JIRA integration | [English](docs/guides/customization-guide.md) \| [简体中文](docs/guides/zh/customization-guide.md) |
+| **Spec-Driven Guide** | Complete workflow methodology from requirements to implementation | [English](docs/guides/spec-driven.md) \| [简体中文](docs/guides/zh/spec-driven.md) |
+| **Claude Subagents** | Advanced: Using 9 specialized subagents for complex projects | [English](docs/guides/claude-subagents.md) \| [简体中文](docs/guides/zh/claude-subagents.md) |
+| **Migration Guide** | Upgrading from v1.x to v2.0.0 | [English](docs/guides/migration-guide.md) \| [简体中文](docs/guides/zh/migration-guide.md) |
 
 ### Package Documentation
 - English: [tools/cc-sdd/README.md](tools/cc-sdd/README.md)
-- 日本語: [tools/cc-sdd/README_ja.md](tools/cc-sdd/README_ja.md)
-- 繁體中文: [tools/cc-sdd/README_zh-TW.md](tools/cc-sdd/README_zh-TW.md)
+- 简体中文: [tools/cc-sdd/README_zh.md](tools/cc-sdd/README_zh.md)
 
 ---
 
@@ -152,7 +148,7 @@ This repository contains the **cc-sdd** NPM package located in [`tools/cc-sdd/`]
 
 For detailed documentation, installation instructions, and usage examples, see:
 - [**Tool Documentation**](tools/cc-sdd/README.md) - Complete cc-sdd tool guide
-- [**Japanese Documentation**](tools/cc-sdd/README_ja.md) - 日本語版ツール説明
+- [**简体中文文档**](tools/cc-sdd/README_zh.md) - 简体中文版工具说明
 
 
 ## License

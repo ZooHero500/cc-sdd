@@ -33,7 +33,7 @@ describe('real cursor manifest', () => {
     expect(code).toBe(0);
     const out = ctx.logs.join('\n');
     expect(out).toMatch(/Plan \(dry-run\)/);
-    expect(out).toContain('[templateDir] commands: templates/agents/cursor/commands -> .cursor/commands/kiro');
+    expect(out).toContain('[templateDir] commands: templates/agents/cursor/commands -> .cursor/commands/yy');
     expect(out).toContain('[templateFile] doc_main: templates/agents/cursor/docs/AGENTS.md -> ./AGENTS.md');
     expect(out).toContain('[templateDir] settings_common: templates/shared/settings -> .kiro/settings');
   });
@@ -46,7 +46,7 @@ describe('real cursor manifest', () => {
     expect(code).toBe(0);
     const out = ctx.logs.join('\n');
     expect(out).toMatch(/Plan \(dry-run\)/);
-    expect(out).toContain('[templateDir] commands: templates/agents/cursor/commands -> .cursor/commands/kiro');
+    expect(out).toContain('[templateDir] commands: templates/agents/cursor/commands -> .cursor/commands/yy');
     expect(out).toContain('[templateFile] doc_main: templates/agents/cursor/docs/AGENTS.md -> ./AGENTS.md');
     expect(out).toContain('[templateDir] settings_common: templates/shared/settings -> .kiro/settings');
   });
@@ -77,12 +77,8 @@ describe('real cursor manifest', () => {
     expect(out).toContain('gpt-5.2');
 
     // Check that the unified next steps are present
-    expect(out).toContain("Launch Cursor IDE and run `/kiro/spec-init <what-to-build>` to create a new specification.");
-    expect(out).toMatch(
-      /Tip: Steering holds persistent project knowledge—patterns, standards, and org-wide policies\. Kick off `\/kiro\/steering` \(essential for existing projects\) and\s+`\/kiro\/steering-custom(?: <what-to-create-custom-steering-document>)?`\. Maintain Regularly/,
-    );
-    expect(out).toContain(
-      'Tip: Update `{{KIRO_DIR}}/settings/templates/` like `requirements.md`, `design.md`, and `tasks.md` so the generated steering and specs follow your team\'s and project\'s development process.',
-    );
+    expect(out).toContain("Run `/yy/steering` to establish project context (essential for existing projects).");
+    expect(out).toContain("Run `/yy/spec-init <what-to-build>` to start working.");
+    expect(out).toContain("Tip: Customize `{{KIRO_DIR}}/settings/templates/` to match your team's development process.");
   });
 });

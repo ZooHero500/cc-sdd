@@ -28,7 +28,7 @@ describe('processManifest', () => {
     const art = result[0] as any;
     expect(art.id).toBe('commands_static_all');
     expect(art.source.from).toBe('templates/agents/claude-code/commands');
-    expect(art.source.toDir).toBe('.claude/commands/kiro');
+    expect(art.source.toDir).toBe('.claude/commands/yy');
   });
 
   it('supports templateDir planning with placeholders', () => {
